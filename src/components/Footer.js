@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FooterRow = styled.div`
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   background-color: #000;
   color: #fff;
   height: 100px;
