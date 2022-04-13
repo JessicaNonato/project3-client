@@ -6,7 +6,7 @@ const FooterRow = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #000;
-  color: #fff;
+  color: blue;
   height: 100px;
   margin: 0;
 `
