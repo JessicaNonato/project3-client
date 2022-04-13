@@ -6,10 +6,8 @@ const HomePage = () => {
         <div>
         <Header/>
         <Footer/>
-        </div>
-        
-        
-    )
-}
+        </div> 
+    );
+};
 
 export default HomePage;

@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
 const MyFavorites = () => {
   return (
-    <div>MyFavorites Here</div>
+    <div>
+      <Header/>
+      <h1>MyFavorites Here</h1>
+      <Footer/>
+    </div>
   )
 }
 
