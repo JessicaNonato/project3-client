@@ -6,6 +6,8 @@
 import HomePage from './pages/Homepage';
 import { Routes, Route } from "react-router-dom";
 import MyFavorites from './components/MyFavorites';
+import './App.css';
+import 'antd/dist/antd.min.css';
 
 // import PrivateOutlet from './components/PrivateOutlet';
 

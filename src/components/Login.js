@@ -12,7 +12,7 @@ import {
   Button,
   Modal
 } from 'antd';
-// import "antd/dist/antd.css";
+import 'antd/dist/antd.min.css';
 
 class Login extends Component {
   

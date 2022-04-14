@@ -19,7 +19,7 @@ import  '../styles/Header.css';
 //   Button,
 //   Modal
 // } from 'antd';
-// // import "antd/dist/antd.css";
+import 'antd/dist/antd.min.css';
 
 
 const Header = () => {
