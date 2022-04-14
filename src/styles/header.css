@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+/*Arrumar: Que fonte é essa Allison? Vamos usar qual?*/
+
+/* @import url('https://fonts.googleapis.com/css2?family=Allison&display=swap'); */
 
 .header {
     font-family: 'Allison', cursive;
 }
 .header-black{
-    background-color: rgb(209, 198, 198);
-    height: 80px;
+    background-color: #000;
+    height: 150px;
     width: 100%;
+    color: white;
 }
