@@ -1,5 +1,4 @@
 import React from "react";
-//import '../styles/carouselBrands'
 import { Carousel } from 'react-carousel-minimal';
 
 
