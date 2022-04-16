@@ -1,9 +1,7 @@
-/*Arrumar: Que fonte é essa Allison? Vamos usar qual?*/
-
-/* @import url('https://fonts.googleapis.com/css2?family=Allison&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
 
 .header {
-    font-family: 'Allison', cursive;
+    font-family: 'Waterfall', cursive;
 }
 .header-black{
     background-color: #000;
