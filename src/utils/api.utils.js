@@ -133,4 +133,79 @@ class Api{
             throw error
         }
     }
+    addProductsInTheCart = async (productId, newProduct) => {
+        try {
+            const { data } = await this.api.post(`/cartproduct/add-product/${productId}`, newProduct)
+            return data
+        } catch (error) {
+            throw error
+        }
+    }
+
+    updateQuantity = async (productId, upQuantity) => {
+        try {
+            const { data } = await this.api.put(`/cartproduct/add-quantity-of-product/${productId}`, upQuantity)
+            return data
+        } catch (error) {
+            throw error
+        }
+    }
+    
+    //Cart
+    createCart = async (productId, newProduct) => {
+        try {
+            const { data } = await this.api.post(`/cart/${productId}`, newProduct)
+            return data
+        } catch (error) {
+            throw error
+        }
+    }
+    updateCart = async (productId, update) => {
+        try {
+            const { data } = await this.api.put(`/cart/update/${productId}`, update)
+            return data
+        } catch (error) {
+            throw error
+        }
+    }
+    cartOpenedToPlaced = async () => {
+        try {
+            const { data } = await this.api.put('/cart/placed-order')
+            return data
+        } catch (error) {
+            throw error
+        }
+    } 
+    cartPlacedToPaid = async () => {
+        try {
+            const { data } = await this.api.put('/cart/paid-order')
+            return data
+        } catch (error) {
+            throw error
+        }
+    } 
+    deleteProductInTheCart  = async (productId) => {
+        try {
+            const { data } = await this.api.delete(`/cart/remove/${productId}`)
+            return data
+        } catch (error) {
+            throw error
+        }
+    } 
+    cleanClart = async (cartId) => {
+        try {
+            const { data } = await this.api.delete(`/cart/clean-cart/${cartId}`)
+            return data
+        } catch (error) {
+            throw error
+        }
+    }
+    deleteCart = async (cartId) => {
+        try {
+            const { data } = await this.api.delete(`/cart/delete-cart/${cartId}`)
+            return data
+        } catch (error) {
+            throw error
+        }
+    }
 }
