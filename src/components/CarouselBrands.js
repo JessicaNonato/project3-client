@@ -13,7 +13,7 @@ const CarouselBrands = () => {
      
     },
     {
-      image: "https://www.bordas-sa.com/wp-content/uploads/2020/10/idole-header.jpg"
+      image: "https://cdn.notinoimg.com/c=85/images/gallery/ba/15/N_TopBanner_Chanel_1D.jpg"
      
     },
     {
@@ -21,7 +21,7 @@ const CarouselBrands = () => {
       
     },
     {
-      image: "https://content.syndigo.com/asset/61a8522b-0369-457f-85f0-fabfe34191ed/1920.webp"
+      image: "http://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/banner/2021_06_17_15_47_07_9/1fa62cda-d7a7-4793-b717-e5752dcff4f4-62022768-marc-jacobs-newco-2440x1280.jpg"
       
     },
     {
@@ -29,15 +29,15 @@ const CarouselBrands = () => {
       
     },
     {
-      image: "https://www.omm.com/~/media/images/site/locations/san_francisco_780x520px.ashx",
-      caption: "San Francisco"
+      image: "https://cdn.shopify.com/s/files/1/0378/8262/6187/files/Shopify_Banner_MD_1900x666-1_1024x1024.jpg?v=1630388291",
+    
     },
     {
       image: "https://kassioperfumaria.vteximg.com.br/arquivos/ids/195382/Banner-bvlgari-omnia-site.png?v=637738064509000000",
     
     },
     {
-      image: "https://www.sephora.ae/dw/image/v2/BCZG_PRD/on/demandware.static/-/Library-Sites-SephoraV2/en/dwd9374deb/Brands_Visuals/CHLOE/ChloeNomade_630x437.jpg?q=75",
+      image: "https://teascentedlibrary.files.wordpress.com/2020/09/chanel-madm-intense-banner.png",
     
     }
   ];
