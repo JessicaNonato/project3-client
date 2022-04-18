@@ -4,11 +4,12 @@ import Footer from './Footer';
 
 const MyFavorites = () => {
   return (
-    <div>
+    <></>
+    /*<div>
       <Header/>
       <h1>MyFavorites Here</h1>
       <Footer/>
-    </div>
+    </div>*/
   )
 }
 

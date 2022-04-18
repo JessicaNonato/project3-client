@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
 
 .header {
-    font-family: 'Waterfall', cursive;
+    font-family: 'Ms Madi', cursive;
 }
 .header-black{
     background-color: #000;
-    height: 150px;
+    height: 50px;
     width: 100%;
     color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.link-favorites{
+    text-decoration: none;
 }

@@ -1,8 +1,5 @@
-//Arrumar ícones brancos, arrumar CSS, font-family?
-
-
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import {TiHeartFullOutline} from 'react-icons/ti';
 import {FaUserCircle} from 'react-icons/fa';
 import Navbar from './Navbar';
@@ -20,20 +17,24 @@ import  '../styles/header.css';
 //   Modal
 // } from 'antd';
 import 'antd/dist/antd.min.css';
+import Login from './Login';
 
 
 const Header = () => {
     return (
         <div>
             <div className='header-black'>
-                {/* <TiHeartFullOutline/> */}
+               <div>
+               <Link className='link-favorites' to={'/myfavorites'}> <TiHeartFullOutline size={25}/></Link>
+               </div>
+                
                 <div class="jumbotron text-center">
-                <h3 style={{color:'white', fontSize: 50, paddingTop: 10}} className='header'>The Coeur</h3>         
+                <h3 style={{color:'white', fontSize: 40, paddingTop: 18}} className='header'>The Coeur</h3>         
                 </div>
-                <p>mudar a cor do header para black e icones brancos / colocar logotipo / alterar altura do header</p>
-                <NavLink to={'/myfavorites'} style={{textDecoration: "none"}}>Favorites</NavLink>
-                <Navbar/> 
-                {/* <FaUserCircle/> */}
+                <div>
+                <FaUserCircle size={20}/>
+                </div>
+                
             </div>
         </div>
     )
