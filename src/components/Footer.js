@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 
 
+
 const FooterRow = styled.div`
   display: flex;
   align-items: center;

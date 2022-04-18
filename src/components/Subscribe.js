@@ -7,12 +7,12 @@ const Subscribe = () => {
     return(
         <div className="subs">
             <div>
-            <p>Subscribe</p>
+            <p className="subscribe">Subscribe</p>
             </div>
             <div>
                 <form>
-                <input type="text" value='e-mail adress'></input>
-                <button>Send</button>
+                <input type="text" value='e-mail adress' className="input-form"></input>
+                <button className="button-form">Send</button>
                 </form>
             </div>
 

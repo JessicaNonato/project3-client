@@ -1,3 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+
 .subs{
     background-color: #F9DCDF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
 }
+.subscribe{
+    font-family: 'Ms Madi', cursive;
+    font-size: 80px;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+.input-form{
+    border: 1px solid #F9DCDF ;
+    border-radius: 20px;
+    padding: 14px;
+    margin-right: 10px;
+    color: lightgray;
+    width: 250px;
+}
+.button-form{
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: white;
+    color: #F9DCDF;
+    font-family: 'Ms Madi', cursive;
+    font-size: 25px;
+    padding: 0px 20px;
+}
+.button-form:hover{
+    background-color: #F9DCDF;
+    color: white;
+  }
+@media screen and (max-width: 768px) {
+    .subs{
+        background-color: #F9DCDF;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    
+    }
+    .subscribe{
+        font-family: 'Ms Madi', cursive;
+        font-size: 40px;
+        color: white;
+        padding: 0;
+        margin: 0;
+    }
+    .input-form{
+        border: 1px solid #F9DCDF ;
+        border-radius: 20px;
+        padding: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        color: lightgray;
+        width: 180px;
+    }
+    .button-form{
+        border: 1px solid white;
+        border-radius: 20px;
+        background-color: white;
+        color: #F9DCDF;
+        font-family: 'Ms Madi', cursive;
+        font-size: 18px;
+        padding: 0px 20px;
+    }
+    .button-form:hover{
+        background-color: #F9DCDF;
+        color: white;
+      }
+  }
