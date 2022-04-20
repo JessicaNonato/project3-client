@@ -31,8 +31,8 @@ const Header = () => {
                 <div class="jumbotron text-center">
                 <h3 style={{color:'white', fontSize: 40, paddingTop: 18}} className='header'>The Coeur</h3>         
                 </div>
-                <div>
-                <FaUserCircle size={20}/>
+                <div className='login'>
+                <Login/> <FaUserCircle size={20}/> 
                 </div>
                 
             </div>

@@ -14,6 +14,7 @@ import {
 } from 'antd';
 import 'antd/dist/antd.min.css';
 
+
 class Login extends Component {
   
   render(){
@@ -143,7 +144,7 @@ class Login extends Component {
         return (
           <div>
             <Button
-              style={{color:'red', marginTop:-200}}
+              style={{color:'white', marginTop:-200}}
               type="text"
               onClick={() => {
                 setVisible(true);

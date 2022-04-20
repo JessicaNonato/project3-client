@@ -13,7 +13,7 @@ const FooterRow = styled.div`
   justify-content: center;
   background-color: #000;
   height: 160px;
-  margin-top: 150px;    //alterar essa margem, era só para visualização na homepage a principio
+  margin-top: 0px;    //alterar essa margem, era só para visualização na homepage a principio
 `
 
 const TitleFooter = styled.h1`

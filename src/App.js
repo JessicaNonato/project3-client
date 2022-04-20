@@ -5,6 +5,7 @@ import React from 'react';
 import HomePage from './pages/Homepage';
 import { Routes, Route } from "react-router-dom";
 import MyFavorites from './components/MyFavorites';
+import FloralPage from './pages/FloralPage';
 import './styles/App.css';
 import 'antd/dist/antd.min.css';
 
@@ -17,8 +18,10 @@ function App() {
         <Route path="/" element={<HomePage/>}/>    
         {/* <Route path='/private' element={<PrivateOutlet/>}> */}
           <Route path='/myfavorites' element={<MyFavorites/>}/>
-        {/* </Route>     */}
-      </Routes>
+          <Route path ="category/floral" element= {<FloralPage/>}/>
+          </Routes>
+        
+      
    
   
     </div>
