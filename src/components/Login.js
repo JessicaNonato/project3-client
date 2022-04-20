@@ -1,7 +1,7 @@
-//Arrumar: buttons do antd react, verificar posicionamento
-
+//Arrumar: buttons do antd react
 
 import React, { Component, useState } from 'react';
+import styled from 'styled-components';
 
 //design
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,6 +13,18 @@ import {
   Modal
 } from 'antd';
 import 'antd/dist/antd.min.css';
+import { Link } from 'react-router-dom';
+import Signup from './Signup';
+
+const ButtonAccount = styled.button`
+  color: gray;
+  background-color: #f9dcdf;
+  width: 370px;
+  height: 40px;
+  border: none;
+  margin: 0 auto;
+  
+`
 
 class Login extends Component {
   
@@ -99,38 +111,19 @@ class Login extends Component {
               hasFeedback
             >
               <Input.Password />
-            </Form.Item>
-            <Form.Item
-              name="confirm"
-              label="Confirm Password"
-              dependencies={['password']}
-              hasFeedback
-              rules={[
-                {
-                  required: true,
-                  message: 'Please confirm your password!',
-                },
-                ({ getFieldValue }) => ({
-                  validator(rule, value) {
-                    if (!value || getFieldValue('password') === value) {
-                      return Promise.resolve();
-                    }
-                    return Promise.reject('The two passwords that you entered do not match!');
-                  },
-                }),
-              ]}
-            >
-              <Input.Password />
-            </Form.Item>            
+            </Form.Item>      
           </Form>
+              <p>Don't have an account?</p>
+              <Link to={'/signup'}>
+              <ButtonAccount onClick={<Signup/>}>CREATE AN ACCOUNT</ButtonAccount>
+              </Link>
           </Modal>
         );
       };
 
 
     //popup and form code: 
-   
-      
+         
       const CollectionsPage = () => {
         const [visible, setVisible] = useState(false);
       
@@ -143,7 +136,7 @@ class Login extends Component {
         return (
           <div>
             <Button
-              style={{color:'red', marginTop:-200}}
+              style={{color:'white'}}
               type="text"
               onClick={() => {
                 setVisible(true);
@@ -165,11 +158,11 @@ class Login extends Component {
     <div className="MainDiv">
      
       
-      {/* <div className="container"> */}
+    {/* <div className="container"> */}
           
-      <CollectionsPage />
+      <CollectionsPage/>
         </div>
-    //   </div>
+      // </div>
   );
 }
 }
@@ -178,14 +171,3 @@ export default Login;
 
 
   
-// const Navbar = () => {
-//   return (
-//     <div>
-//         <nav>
-//         <NavLink to={'/'} id='signup' style={{textDecoration: "none"}}>Signup</NavLink>
-//         <NavLink to={'/'} id='login' style={{textDecoration: "none"}}>Login</NavLink>
-//         </nav>
-//     </div>
-//   )
-// }
-

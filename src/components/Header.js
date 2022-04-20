@@ -1,12 +1,9 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {TiHeartFullOutline} from 'react-icons/ti';
 import {FaUserCircle} from 'react-icons/fa';
-import Navbar from './Navbar';
-// import {BsBagFill} from 'react-icons/bs';
-// import {GoSearch} from 'react-icons/go';
-// import { GiHamburgerMenu } from 'react-icons/gi';
 import  '../styles/header.css';
+import Signup from './Signup';
 // //design
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // // form and modal modules (antd library do react (UI))
@@ -16,7 +13,7 @@ import  '../styles/header.css';
 //   Button,
 //   Modal
 // } from 'antd';
-import 'antd/dist/antd.min.css';
+
 import Login from './Login';
 
 
@@ -32,6 +29,8 @@ const Header = () => {
                 <h3 style={{color:'white', fontSize: 40, paddingTop: 18}} className='header'>The Coeur</h3>         
                 </div>
                 <div>
+                <Login/>
+                <Signup/>
                 <FaUserCircle size={20}/>
                 </div>
                 
