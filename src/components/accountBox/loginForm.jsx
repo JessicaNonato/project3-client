@@ -3,15 +3,15 @@ import { AccountContext } from "./accountContext";
 import { BoxContainer, ButtonSubmit, ButtonToSignup, FormContainer, HiddedText, Input } from "./common";
 
 const LoginForm = (props) => {
-    
+
     const { goToSignup} = useContext(AccountContext)
 
 
     return(
         <BoxContainer>
             <FormContainer>
-                <Input type='email' placeholder='Email'/>
-                <Input type='password' placeholder='Password'/>
+                <Input type='email' placeholder='Email' required/>
+                <Input type='password' placeholder='Password' required/>
             </FormContainer>
             <HiddedText href='#'>Forget your password?</HiddedText>
             <ButtonSubmit type="submit">Login</ButtonSubmit>
