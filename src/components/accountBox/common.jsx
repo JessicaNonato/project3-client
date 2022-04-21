@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const BoxContainer = styled.div`
-    width: 100%;
+    width: 400px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
+    background-color: #f0f1e8;
+    box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
+    position: relative;
+    overflow: hidden;
 `
 
 export const FormContainer = styled.form`
@@ -14,6 +17,16 @@ export const FormContainer = styled.form`
     flex-direction: column;
     margin-bottom: 20px;
 `
+
+export const HeaderContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 500;
+ ` 
 
 export const HiddedText = styled.p`
     font-size: 12px;
@@ -68,3 +81,11 @@ export const ButtonToSignup = styled.button`
         filter: brightness(1.05);
     }
 `
+
+export const InsideContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.8em;
+`
+
