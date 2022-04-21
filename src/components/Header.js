@@ -11,7 +11,7 @@ const Header = () => {
         <div>
             <div className='header-black'>
                <div>
-               <Link className='link-favorites' to={'/myfavorites'}> <TiHeartFullOutline size={25}/></Link>
+               <Link className='link-favorites' to={'/myfavorites'}> <TiHeartFullOutline size={25} style={{color: 'white'}}/></Link>
                </div>
                 
                 <div class="jumbotron text-center">

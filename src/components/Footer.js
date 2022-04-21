@@ -5,8 +5,6 @@ import { NavLink as NavLinkReact } from 'react-router-dom';
 import styled from 'styled-components';
 
 
-
-
 const FooterRow = styled.div`
   display: flex;
   align-items: center;
@@ -57,14 +55,13 @@ const LinkHome = styled.div`
 const Footer = () => {
   return (
     <FooterRow>
-      
       <LinkHome>
         <TitleFooter>The Coeur</TitleFooter>
       </LinkHome>
       <LinkFooter>
-      <NavLink to={'/privacy'}>Privacy Policy</NavLink>
-      <NavLink to={'/terms'}>Terms And Conditions</NavLink>
-      <NavLink to={'/about'}>About</NavLink>
+      <NavLink to={'/#'}>Privacy Policy</NavLink>
+      <NavLink to={'/#'}>Terms And Conditions</NavLink>
+      <NavLink to={'/#'}>About</NavLink>
       <NavLink to={'shipping'}>Shipping Info</NavLink>
       <NavLink to={'/returns'}>Returns/Exchanges</NavLink>
       <NavLink to={'contact'}>Contact</NavLink>
