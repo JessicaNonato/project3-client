@@ -1,78 +1,83 @@
-//Arrumar: CSS (travei, buguei), Icones do footer em branco, font-family?
-
+//Arrumar: CSS (travei, buguei)
 import React from 'react';
-import { NavLink as NavLinkReact } from 'react-router-dom';
+import { Link as LinkReact } from 'react-router-dom';
 import styled from 'styled-components';
-
-
-
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from 'react-icons/fa'; 
+import { FaInstagram } from 'react-icons/fa';
+import { FaPinterest } from 'react-icons/fa';
 
 const FooterRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #000;
-  height: 160px;
-  margin-top: 0px;    //alterar essa margem, era só para visualização na homepage a principio
+  height: 150px;
+  
 `
-
 const TitleFooter = styled.h1`
   color: white;
-  font-size: 20px;
+  font-size: 30px;
+  font-family: 'Ms Madi';
+  @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
 `
 
-const NavLink = styled(NavLinkReact)`
-  padding: 15px;
+const Title = styled.div`
+  display: flex;
+  padding: 10px;
+`
+// const LinkHome = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   padding: 10px;
+//   margin-bottom: 80px;
+//   align-items: center;
+//   justify-content: center;
+// `
+
+const Link = styled(LinkReact)`
+  padding-right: 20px;
   background-color: none;
   color: white;
-  /* .active {
-
-  } */
-`;
-
+  &:hover {
+    color: white;
+  }
+`
 const LinkFooter = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 10px;
-  margin-top: 80px;
+  margin-top: 50px;
+  margin-bottom: -35px;
   align-items: center;
   justify-content: center;
 `
+const Icons = styled.div`
+  display: inline;
+  
 
-const LinkHome = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin-bottom: 80px;
-  align-items: center;
-  justify-content: center;
- 
 `
-
-
-
-
-
-
 const Footer = () => {
   return (
     <FooterRow>
-      
-      <LinkHome>
+      <Title>
         <TitleFooter>The Coeur</TitleFooter>
-      </LinkHome>
+      </Title>
+      <Icons>
+        <FaFacebookF style={{color: 'white'}} size={20}/>
+        <FaTwitter style={{color: 'white'}} size={20}/>
+        <FaInstagram style={{color:'white'}} size={20}/>
+        <FaPinterest style={{color: 'white'}} size={20}/>
+      </Icons>
       <LinkFooter>
-      <NavLink to={'/privacy'}>Privacy Policy</NavLink>
-      <NavLink to={'/terms'}>Terms And Conditions</NavLink>
-      <NavLink to={'/about'}>About</NavLink>
-      <NavLink to={'shipping'}>Shipping Info</NavLink>
-      <NavLink to={'/returns'}>Returns/Exchanges</NavLink>
-      <NavLink to={'contact'}>Contact</NavLink>
+        <Link to={'/'}>Privacy Policy</Link>
+        <Link to={'/'}>Terms And Conditions</Link>
+        <Link to={'/'}>About</Link>
+        <Link to={'/'}>Shipping Info</Link>
+        <Link to={'/'}>Returns/Exchanges</Link>
+        <Link to={'/'}>Contact</Link>
       </LinkFooter>
     </FooterRow>
   )
 }
-
-
 
 export default Footer;
