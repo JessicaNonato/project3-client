@@ -1,7 +1,7 @@
 //Arrumar: CSS (travei, buguei), Icones do footer em branco, font-family?
 
 import React from 'react';
-import { NavLink as NavLinkReact } from 'react-router-dom';
+import { Link as LinkReact } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -10,66 +10,57 @@ const FooterRow = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #000;
-  height: 160px;
-  margin-top: 150px;    //alterar essa margem, era só para visualização na homepage a principio
+  height: 150px;
+  
 `
 
-const TitleFooter = styled.h1`
-  color: white;
-  font-size: 20px;
-`
+// const TitleFooter = styled.h1`
+//   color: white;
+//   font-size: 20px;
+// `
 
-const NavLink = styled(NavLinkReact)`
+const Link = styled(LinkReact)`
   padding: 15px;
   background-color: none;
   color: white;
-  /* .active {
-
-  } */
-`;
+  &:hover {
+    color: white;
+  }
+`
 
 const LinkFooter = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 10px;
   margin-top: 80px;
   align-items: center;
   justify-content: center;
 `
 
-const LinkHome = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin-bottom: 80px;
-  align-items: center;
-  justify-content: center;
+// const LinkHome = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   padding: 10px;
+//   margin-bottom: 80px;
+//   align-items: center;
+//   justify-content: center;
  
-`
-
-
-
-
-
-
+// `
 const Footer = () => {
   return (
     <FooterRow>
-      <LinkHome>
-        <TitleFooter>The Coeur</TitleFooter>
-      </LinkHome>
+     
+        {/* <TitleFooter>The Coeur</TitleFooter> */}
+      
       <LinkFooter>
-      <NavLink to={'/#'}>Privacy Policy</NavLink>
-      <NavLink to={'/#'}>Terms And Conditions</NavLink>
-      <NavLink to={'/#'}>About</NavLink>
-      <NavLink to={'shipping'}>Shipping Info</NavLink>
-      <NavLink to={'/returns'}>Returns/Exchanges</NavLink>
-      <NavLink to={'contact'}>Contact</NavLink>
+        <Link to={'/'}>Privacy Policy</Link>
+        <Link to={'/'}>Terms And Conditions</Link>
+        <Link to={'/'}>About</Link>
+        <Link to={'/'}>Shipping Info</Link>
+        <Link to={'/'}>Returns/Exchanges</Link>
+        <Link to={'/'}>Contact</Link>
       </LinkFooter>
     </FooterRow>
   )
 }
-
-
 
 export default Footer;
