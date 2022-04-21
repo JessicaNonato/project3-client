@@ -8,6 +8,7 @@ import MyFavorites from './components/MyFavorites';
 import FloralPage from './pages/FloralPage';
 import './styles/App.css';
 import 'antd/dist/antd.min.css';
+import CarouselProducts from './components/CarouselProducts';
 
 // import PrivateOutlet from './components/PrivateOutlet';
 
@@ -19,6 +20,7 @@ function App() {
         {/* <Route path='/private' element={<PrivateOutlet/>}> */}
           <Route path='/myfavorites' element={<MyFavorites/>}/>
           <Route path ="category/floral" element= {<FloralPage/>}/>
+          <Route path ="/carousel" element= {<CarouselProducts/>}/>
           </Routes>
         
       
