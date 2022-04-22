@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-// import {FaUserCircle} from 'react-icons/fa';
 import ModalLogin from "./ModalLogin";
 import ModalSignup from "./ModalSignup";
 
