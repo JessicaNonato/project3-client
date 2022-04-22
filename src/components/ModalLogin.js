@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { useNavigate } from 'react-router-dom';
+import api from '../utils/api.utils';
 import { 
     BoxContainer,
     HeaderContainer,
-    HiddedText, 
+    QuestionText, 
     FormContainer, 
     Input, 
     ButtonSubmit, 
-    ButtonToSignup,
-    InsideContainer } from './accountBox/common';
+    InsideContainer, 
+    ButtonCancel} from './accountBox/common';
 
     
 const CustomStyles = {
@@ -22,6 +24,23 @@ const CustomStyles = {
 Modal.setAppElement('#root');
 
 const ModalLogin = ({ open, onClose, changeForm }) => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const navigate = useNavigate
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await api.login({email, password})
+      setEmail('')
+      setPassword('')
+      navigate('/')
+    } catch (error) {
+      console.error(error.status)
+    }
+  }
+
     return(
 <Modal
       isOpen={open}
@@ -31,21 +50,31 @@ const ModalLogin = ({ open, onClose, changeForm }) => {
       <BoxContainer>
       <HeaderContainer>Already have an account?</HeaderContainer>
         <InsideContainer>
-          <div>
-          <FormContainer>
-            <Input type='email' placeholder='Email' required/>
-            <Input type='password' placeholder='Password' required/>
-            <HiddedText href='#'>Forget your password?</HiddedText>
+          <FormContainer onSubmit={handleSubmit}>
+            <Input 
+              type='email' 
+              id='email' 
+              name='email' 
+              value={email} 
+              onChange= {(e) => setEmail(e.target.value)}
+              placeholder='Email' 
+              required/>
+            <Input 
+              type='password'
+              id='password' 
+              name='password' 
+              value={password} 
+              onChange= {(e) => setPassword(e.target.value)}
+              placeholder='Password' 
+              required/>
             <ButtonSubmit type="submit">Login</ButtonSubmit>
+          <QuestionText>Forget your password?</QuestionText>
           </FormContainer>
-          
-          <HiddedText href='#'>Don't have an account?</HiddedText>
-          <ButtonToSignup type="submit" onClick={changeForm} >Create an Account</ButtonToSignup>
-          <button type='text' style={{color: '#504e4e', width:100}} onClick={onClose}>Cancel</button>
-          </div>
+          <QuestionText>Don't have an account?</QuestionText>
+          <ButtonSubmit type="submit" onClick={changeForm} >Create an Account</ButtonSubmit>
+          <ButtonCancel type='button'onClick={onClose}>Cancel</ButtonCancel>
         </InsideContainer>
       </BoxContainer>
-      
       </Modal>
     )
 }
