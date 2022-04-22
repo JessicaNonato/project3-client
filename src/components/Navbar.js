@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import ModalLogin from "./ModalLogin";
 import ModalSignup from "./ModalSignup";
-
+import {FaUserCircle} from 'react-icons/fa';
+import styled from 'styled-components';
 
 Modal.setAppElement("#root");
+
+const ButtonNavbar = styled.button`
+  background: none;
+  border: none;
+`
 
 const Navbar = () => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
@@ -38,20 +44,16 @@ const Navbar = () => {
 
   return (
     <>
-      <button
-        type="text"
-        style={{ background: "none", border: "none" }}
+      <ButtonNavbar
+        type="button"
         onClick={handleOpenModalLogin}
-      >
-        Login
-      </button>
-      <button
-        type="text"
-        style={{ background: "none", border: "none" }}
+      > Login
+      </ButtonNavbar>
+      <ButtonNavbar
+        type="button"
         onClick={handleOpenModalSignup}
-      >
-        Signup
-      </button>
+      ><FaUserCircle/>
+      </ButtonNavbar>
       <ModalLogin
         open={modalIsOpenLogin}
         onClose={handleCloseModalLogin}
