@@ -9,6 +9,8 @@ import {
     ButtonSubmit, 
     ButtonToSignup,
     InsideContainer } from './accountBox/common';
+// import {FaUserCircle} from 'react-icons/fa';
+
 
     
 const CustomStyles = {
