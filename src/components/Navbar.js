@@ -10,6 +10,7 @@ Modal.setAppElement("#root");
 const ButtonNavbar = styled.button`
   background: none;
   border: none;
+  padding: 10px;
 `
 
 const Navbar = () => {
@@ -52,7 +53,7 @@ const Navbar = () => {
       <ButtonNavbar
         type="button"
         onClick={handleOpenModalSignup}
-      ><FaUserCircle/>
+      ><FaUserCircle size={18}/>
       </ButtonNavbar>
       <ModalLogin
         open={modalIsOpenLogin}
@@ -64,8 +65,6 @@ const Navbar = () => {
         onClose={handleCloseModalSignup}
         changeForm={goToLogin}
       />
-
-      {/* <FaUserCircle size={20}/> */}
     </>
   );
 };
