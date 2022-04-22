@@ -15,7 +15,7 @@ const Header = () => {
                </div>
                 
                 <div class="jumbotron text-center">
-                <h3 style={{color:'white', fontSize: 40, paddingTop: 18}} className='header'>The Coeur</h3>         
+                <Link to={'/'}><h3 style={{color:'white', fontSize: 40, paddingTop: 18}} className='header'>The Coeur</h3>  </Link>       
                 </div>
                 <div>
                 <Navbar/>

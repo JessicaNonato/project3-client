@@ -49,7 +49,7 @@ const CarouselProducts = () => {
                  </div>
                  <div className="info">
                  <span className="name">{name}</span>
-                 <span className="price">{price}</span>
+                 <span className="price">R${price}</span>
                  </div>
                  </div>
             )})}

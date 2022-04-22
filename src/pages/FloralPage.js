@@ -1,8 +1,12 @@
 import {React, useEffect, useState} from "react";
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import api from '../utils/api.utils'
+import api from '../utils/api.utils';
+import '../styles/categoriesPages.css';
+import Subscribe from '../components/Subscribe'
+
+
 
 const FloralPage = () => {
     const categoryParams = useParams();
@@ -28,29 +32,25 @@ const FloralPage = () => {
       return(
           <div>
               <Header />
-              <div>
-                  {perfumes ? perfumes.map((perfume) => {
-                      return (
-                        <div className="wrap-element" key={perfume._id}>
-                             <Link className="perfume-link" to={`/perfume/${perfume._id}`}>
-                    <div className="perfume">
-                      <figure>
-                        <img
-                          src={perfume.img1}
-                          className="list-img"
-                          alt=""
-                        />
-                      </figure>
-                      <h3>{perfume.name}</h3>
-                      <h4>{perfume.price}</h4>
-                    </div>
-                  </Link>
-                        </div> 
-                      )
-                  })
-                  : "No Results."}
+              <div className="page">
+              <img className="image-banner" src="https://images.pexels.com/photos/7291997/pexels-photo-7291997.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt=""/>
+              <div className="products-row">
+                  {filterApi ? filterApi.map ((item) => { const {_id, name, img1, price} = item; return(
+                 <div className="item-page" key={_id}>
+                 <div className="image-page">
+                     <img src={img1} alt={name} />
+                 </div>
+                 <div className="info-page">
+                 <span className="name-page">{name}</span>
+                 <span className="price-page">R${price}</span>
+                 </div>
+                 </div>
+            )}): "No Results."}
               </div>
+              </div>
+              <Subscribe/>
               <Footer />
+            
           </div>
       )
 }

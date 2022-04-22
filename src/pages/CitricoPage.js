@@ -8,7 +8,7 @@ import Subscribe from '../components/Subscribe'
 
 
 
-const AmadeiradoPage = () => {
+const CitricoPage = () => {
     const categoryParams = useParams();
     const [perfumes, setPerfumes] = useState([]);
     
@@ -24,7 +24,7 @@ const AmadeiradoPage = () => {
     }
     
   
-    const perfumesFiltrados = perfumes.filter(item => item.category == "amadeirado")
+    const perfumesFiltrados = perfumes.filter(item => item.category == "cítrico")
      
     console.log(perfumesFiltrados)
     useEffect(() => {
@@ -32,7 +32,7 @@ const AmadeiradoPage = () => {
       }, [categoryParams]);
 
       return(
-          <div>
+        <div>
               <Header />
               <div className="page">
               <img className="image-banner" src="https://images.pexels.com/photos/7291997/pexels-photo-7291997.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt=""/>
@@ -57,4 +57,4 @@ const AmadeiradoPage = () => {
       )
 }
 
-export default AmadeiradoPage;
+export default CitricoPage;

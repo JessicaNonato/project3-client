@@ -21,25 +21,25 @@ const Categories = () => {
             </div>
 
             <div className='link-categories'>
-            <Link to={'/category/floral'}> 
+            <Link to={'/category/amadeirado'}> 
             <GiDeadWood size={50}/> 
             </Link> 
             </div>
             
             <div className='link-categories'>
-            <Link to={'/category/floral'}> 
+            <Link to={'/category/oriental'}> 
             <CgAtlasian size={50}/> 
             </Link> 
             </div>
 
             <div className='link-categories'>
-            <Link to={'/category/floral'}> 
+            <Link to={'/category/aromatico'}> 
             <GiHerbsBundle size={50}/> 
             </Link> 
             </div>
             
             <div className='link-categories'>
-            <Link to={'/category/floral'}> 
+            <Link to={'/category/citrico'}> 
             <GiOrangeSlice size={50}/> 
             </Link> 
             </div>
