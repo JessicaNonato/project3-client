@@ -1,7 +1,6 @@
 //Arrumar: private outlet está quebrando o código
 //Arrumar erro do antd que está dando no terminal, ver com DK
-
-import React from 'react';
+import {React, useEffect, useState} from "react";
 import HomePage from './pages/Homepage';
 import { Routes, Route } from "react-router-dom";
 import MyFavorites from './components/MyFavorites';
@@ -12,11 +11,57 @@ import OrientalPage from './pages/OrientalPage';
 import AromaticoPage from './pages/AromaticoPage';
 import './styles/App.css';
 import 'antd/dist/antd.min.css';
+import ProductCard from './components/ProductCard';
+import api from './utils/api.utils';
 
 
 // import PrivateOutlet from './components/PrivateOutlet';
 
 function App() {
+  const [cart, setCart] = useState([]);
+  const [favorites, setFavorites] = useState([]);
+
+   
+
+    const getCart = async () => {
+      try {
+          const cartApi = await api.getCart();
+          setCart( cartApi );
+  
+      } catch (error) {
+          console.log(error);
+      }
+  }
+//  useEffect(() => {
+//    getCart();    
+//}, []);
+   
+
+   const getFavorites = async () => {
+    try {
+        const favoritesApi = await api.getAllFavorites();
+        setFavorites( favoritesApi );
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+//useEffect(() => {
+//  getFavorites();
+//}, []);
+
+    const addFavorites = async (productId) => {
+      try {
+          const addFavoritesApi = await api.addFavorites();
+          getFavorites();
+  
+      } catch (error) {
+          console.log(error);
+      }
+  }
+
+
+
   return (
     <div className="App">
       <Routes>
@@ -28,6 +73,7 @@ function App() {
           <Route path ="category/citrico" element={<CitricoPage/>}/>
           <Route path ="category/oriental" element={<OrientalPage/>}/>
           <Route path ="category/aromatico" element={<AromaticoPage/>}/>
+          <Route path="/product/:id" element={<ProductCard  getCart={getCart} addFavorites={addFavorites} getFavorites={getFavorites} favorites={favorites}/>} />
           
           </Routes>
         
