@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import api from "../utils/api.utils";
 import {
   BoxContainer,
   HeaderContainer,
@@ -23,16 +24,56 @@ const CustomStyles = {
 Modal.setAppElement("#root");
 
 const ModalSignup = ({ open, onClose, changeForm }) => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await api.signup({name, email, password})
+      setEmail('')
+      setPassword('')
+      setName('')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <Modal isOpen={open} onRequestClose={onClose} style={CustomStyles}>
       <BoxContainer>
         <HeaderContainer>Create an Account</HeaderContainer>
         <InsideContainer>
-          <FormContainer>
-            <Input type="text" placeholder="Name" required />
-            <Input type="email" placeholder="Email" required />
-            <Input type="password" placeholder="Password" required />
-            <Input type="password" placeholder="Confirm Password" required />
+          <FormContainer onSubmit={handleSubmit}>
+            <Input 
+              type="text" 
+              placeholder="Name" 
+              id="name" 
+              value={name} 
+              onChange={(e) => setName(e.target.value)}
+              required />
+            <Input 
+              type="email" 
+              placeholder="Email" 
+              id="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)}
+              required />
+            <Input 
+              type="password" 
+              placeholder="Password" 
+              id="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)}
+              required />
+            <Input 
+              type="password" 
+              placeholder="Confirm Password" 
+              id="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)}
+              required />
             <ButtonSubmit type="submit">Signup</ButtonSubmit>
             <QuestionText>Already have an account?</QuestionText>
             <ButtonSubmit type="submit" onClick={changeForm}>Login</ButtonSubmit>
