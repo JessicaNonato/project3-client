@@ -15,3 +15,10 @@
 .link-favorites{
     text-decoration: none;
 }
+.login{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px; 
+}
+
