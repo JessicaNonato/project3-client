@@ -1,4 +1,3 @@
-//Arrumar: CSS (travei, buguei)
 import React from 'react';
 import { Link as LinkReact } from 'react-router-dom';
 import styled from 'styled-components';
@@ -7,66 +6,59 @@ import { FaTwitter } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaPinterest } from 'react-icons/fa';
 
-const FooterRow = styled.div`
+const FooterColumn = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   background-color: #000;
   height: 150px;
+  flex-direction: column;
   
 `
 const TitleFooter = styled.h1`
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Ms Madi';
   @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
 `
 
 const Title = styled.div`
   display: flex;
-  padding: 10px;
+  padding: 2px;
+  margin-top: -30px;
+  margin-bottom: -15px;
 `
-// const LinkHome = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   padding: 10px;
-//   margin-bottom: 80px;
-//   align-items: center;
-//   justify-content: center;
-// `
-
 const Link = styled(LinkReact)`
-  padding-right: 20px;
+  padding: 15px;
   background-color: none;
   color: white;
   &:hover {
     color: white;
   }
 `
+const Icons = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 const LinkFooter = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 50px;
-  margin-bottom: -35px;
   align-items: center;
   justify-content: center;
+  margin-top: -10px;
 `
-const Icons = styled.div`
-  display: inline;
-  
 
-`
 const Footer = () => {
   return (
-    <FooterRow>
-      <Title>
+    <FooterColumn>
+        <Title>
         <TitleFooter>The Coeur</TitleFooter>
       </Title>
       <Icons>
-        <FaFacebookF style={{color: 'white'}} size={20}/>
-        <FaTwitter style={{color: 'white'}} size={20}/>
-        <FaInstagram style={{color:'white'}} size={20}/>
-        <FaPinterest style={{color: 'white'}} size={20}/>
+        <Link to={{ pathname: '//www.facebook.com/' }}><FaFacebookF style={{color: 'white'}} size={20}/></Link>
+        <Link to={{ pathname: '//twitter.com/' }}><FaTwitter style={{color: 'white'}} size={20}/></Link>
+        <Link to={{ pathname: '//instagram.com/' }}><FaInstagram style={{color:'white'}} size={20}/></Link>
+        <Link to={{ pathname: '//pinterest.com' }}><FaPinterest style={{color: 'white'}} size={20}/></Link>
       </Icons>
       <LinkFooter>
         <Link to={'/'}>Privacy Policy</Link>
@@ -75,8 +67,8 @@ const Footer = () => {
         <Link to={'/'}>Shipping Info</Link>
         <Link to={'/'}>Returns/Exchanges</Link>
         <Link to={'/'}>Contact</Link>
-      </LinkFooter>
-    </FooterRow>
+      </LinkFooter> 
+    </FooterColumn>
   )
 }
 
