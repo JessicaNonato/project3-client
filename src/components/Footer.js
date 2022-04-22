@@ -55,10 +55,10 @@ const Footer = () => {
         <TitleFooter>The Coeur</TitleFooter>
       </Title>
       <Icons>
-        <Link to={{ pathname: '//www.facebook.com/' }}><FaFacebookF style={{color: 'white'}} size={20}/></Link>
-        <Link to={{ pathname: '//twitter.com/' }}><FaTwitter style={{color: 'white'}} size={20}/></Link>
-        <Link to={{ pathname: '//instagram.com/' }}><FaInstagram style={{color:'white'}} size={20}/></Link>
-        <Link to={{ pathname: '//pinterest.com' }}><FaPinterest style={{color: 'white'}} size={20}/></Link>
+        <Link to={{ pathname: '//facebook.com/'}} target='_blank'><FaFacebookF style={{color: 'white'}} size={20}/></Link>
+        <Link to={{ pathname: '//twitter.com/' }} target='_blank'><FaTwitter style={{color: 'white'}} size={20}/></Link>
+        <Link to={{ pathname: '//instagram.com/' }} target='_blank'><FaInstagram style={{color:'white'}} size={20}/></Link>
+        <Link to={{ pathname: '//pinterest.com' }} target='_blank'><FaPinterest style={{color: 'white'}} size={20}/></Link>
       </Icons>
       <LinkFooter>
         <Link to={'/'}>Privacy Policy</Link>
