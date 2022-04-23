@@ -4,6 +4,7 @@ import '../styles/carouselProducts.css'
 import {IoIosArrowForward} from 'react-icons/io';
 import {IoIosArrowBack} from 'react-icons/io';
 import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
+import { Link } from 'react-router-dom';
 
 
 const CarouselProducts = () => {
@@ -44,6 +45,7 @@ const CarouselProducts = () => {
         <div className="carouselProd" ref={carousel}>
            
             {perfumes.map ((item) => { const {_id, name, img1, price} = item; return(
+                <Link className="perfume-link" to={`/product/${_id}`}>
                  <div className="item" key={_id}>
                  <div className="image">
                      <img src={img1} alt={name} />
@@ -53,6 +55,7 @@ const CarouselProducts = () => {
                  <span className="price">R${price}</span>
                  </div>
                  </div>
+                 </Link>
             )})}
         </div>
         <div className="buttons">

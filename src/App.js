@@ -51,16 +51,6 @@ function App() {
 //  getFavorites();
 //}, []);
 
-    const addFavorites = async (productId) => {
-      try {
-          const addFavoritesApi = await api.addFavorites();
-          getFavorites();
-  
-      } catch (error) {
-          console.log(error);
-      }
-  }
-
 
 
   return (
@@ -74,7 +64,7 @@ function App() {
           <Route path ="/category/citrico" element={<CitricoPage/>}/>
           <Route path ="/category/oriental" element={<OrientalPage/>}/>
           <Route path ="/category/aromatico" element={<AromaticoPage/>}/>
-          <Route path="/product/:id" element={<ProductCard  getCart={getCart} addFavorites={addFavorites} getFavorites={getFavorites} favorites={favorites}/>} />
+          <Route path="/product/:id" element={<ProductCard  getCart={getCart} getFavorites={getFavorites} favorites={favorites}/>} />
           <Route path="/cart" element={<Cart/>}/>
   
           

@@ -1,5 +1,5 @@
 import {React, useEffect, useState} from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import api from '../utils/api.utils';
@@ -23,7 +23,7 @@ const FloralPage = () => {
         }
     }
     
-    const filterApi = perfumes.filter(item => item.category == "floral")
+    const filterApi = perfumes.filter(item => item.category === "floral")
     console.log(filterApi)
     useEffect(() => {
         getPerfumes();
@@ -36,15 +36,17 @@ const FloralPage = () => {
               <img className="image-banner" src="https://images.pexels.com/photos/7291997/pexels-photo-7291997.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt=""/>
               <div className="products-row">
                   {filterApi ? filterApi.map ((item) => { const {_id, name, img1, price} = item; return(
-                 <div className="item-page" key={_id}>
-                 <div className="image-page">
-                     <img src={img1} alt={name} />
-                 </div>
-                 <div className="info-page">
-                 <span className="name-page">{name}</span>
-                 <span className="price-page">R${price}</span>
-                 </div>
-                 </div>
+              <Link className="perfume-link" to={`/product/${_id}`}>
+              <div className="item-page" key={_id}>
+              <div className="image-page">
+                  <img src={img1} alt={name} />
+              </div>
+              <div className="info-page">
+              <span className="name-page">{name}</span>
+              <span className="price-page">R${price}</span>
+              </div>
+              </div>
+              </Link>
             )}): "No Results."}
               </div>
               </div>
