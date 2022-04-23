@@ -3,6 +3,7 @@ import api from '../utils/api.utils'
 import '../styles/carouselProducts.css'
 import {IoIosArrowForward} from 'react-icons/io';
 import {IoIosArrowBack} from 'react-icons/io';
+import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
 
 
 const CarouselProducts = () => {
@@ -38,7 +39,7 @@ const CarouselProducts = () => {
     return(
         <div className="component">
              <div className="buttons">
-                <button onClick={handleLeftClick}><IoIosArrowBack size={20}/> </button>
+                <button onClick={handleLeftClick}><IoIosArrowBack size={30} style={{color:"lightgray"}}/> </button>
             </div>
         <div className="carouselProd" ref={carousel}>
            
@@ -55,7 +56,7 @@ const CarouselProducts = () => {
             )})}
         </div>
         <div className="buttons">
-                <button onClick={handleRightClick}><IoIosArrowForward size={20}/> </button>
+                <button onClick={handleRightClick}><IoIosArrowForward size={30} style={{color:"lightgray"}}/> </button>
             </div>
         </div>
     )

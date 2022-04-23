@@ -2,29 +2,27 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { Link} from 'react-router-dom'
-import axios from 'axios';
+import api from '../utils/api.utils'
 
 const MyFavorites = () => {
   const [favorites, setFavorites] = useState([]);
 
-  const keep = JSON.parse(localStorage.getItem("favorites"));  //keep no useEffect()
   
-  const getPerfume = async (favPerfumes) => {
-    const allPerfumesFavs = []; 
+  const getFavorites = async () => {
+    try {
+        const favoritesPerfumes = await api.getAllFavorites();
+        setFavorites( favoritesPerfumes.products );
+        console.log(favoritesPerfumes.products)
+    } catch (error) {
+        console.log(error);
+    }}
 
-    for (const fav of favPerfumes) {
-      const { data } = await axios.get(
-        `url aqui=${fav}`
-      )
-      allPerfumesFavs.push(data.perfumes[0])
-    }
-    setFavorites(allPerfumesFavs)
-  }
+ 
   
-  
-  useEffect(() => {
-    getPerfume(keep);
-  }, [keep]);
+   useEffect(() => {
+     getFavorites();
+   }, []);
+
 
   return (
     <>

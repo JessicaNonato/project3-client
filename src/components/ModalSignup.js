@@ -27,17 +27,19 @@ const ModalSignup = ({ open, onClose, changeForm }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await api.signup({name, email, password})
-      setEmail('')
-      setPassword('')
-      setName('')
+      const user =  await api.register({name, email, password})
+      
     } catch (error) {
-      console.log(error)
+      setMessage(error.message)
     }
+    setEmail('')
+    setPassword('')
+    setName('')
   }
 
   return (
@@ -67,13 +69,13 @@ const ModalSignup = ({ open, onClose, changeForm }) => {
               value={password} 
               onChange={(e) => setPassword(e.target.value)}
               required />
-            <Input 
+            {/* <Input 
               type="password" 
               placeholder="Confirm Password" 
               id="password" 
               value={password} 
               onChange={(e) => setPassword(e.target.value)}
-              required />
+              required /> */}
             <ButtonSubmit type="submit">Signup</ButtonSubmit>
             <QuestionText>Already have an account?</QuestionText>
             <ButtonSubmit type="submit" onClick={changeForm}>Login</ButtonSubmit>
