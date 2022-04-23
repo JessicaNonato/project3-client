@@ -26,19 +26,21 @@ Modal.setAppElement('#root');
 const ModalLogin = ({ open, onClose, changeForm }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
 
-  const navigate = useNavigate
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await api.login({email, password})
-      setEmail('')
-      setPassword('')
+      const user = await api.login({email, password})
       navigate('/')
+      console.log('sucess')
     } catch (error) {
-      console.error(error.status)
+      setMessage(error.message)
     }
+    setEmail('')
+    setPassword('')
   }
 
     return(
