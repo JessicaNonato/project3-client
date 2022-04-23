@@ -1,0 +1,63 @@
+.card-page{
+    margin: 70px 15vw;
+    display: flex;
+    flex-direction: column; 
+    font-size: 1rem;
+
+}
+.img-size {
+    width: 380px;
+    height: 30%;
+    object-fit: contain;
+    margin-left: 10px;
+}
+.card {
+    display: flex;
+    align-items:flex-start;
+    margin-top: 20px;
+    padding-top: 30px;
+    font-size: 0.9rem;
+}
+.description {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    margin-left: 70px; 
+}
+.description p{
+    font-size: 12px;
+    color: lightgrey;
+}
+.description h6{
+    font-size: 14px; 
+}
+.description h3{
+    color: lightgrey;
+}
+.button-card{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.button-card img{
+    width: 70px;
+    height: 70px;
+    border: 1.5px solid lightgrey;
+    object-fit: cover;
+    margin-bottom: 10px;   
+}
+.buy{
+    width: 100%;
+    padding: 11px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 100px 100px 100px 100px;
+    transition: all, 240ms ease-in-out;
+    background: #F9DCDF;
+    margin-bottom: 15px; 
+}
