@@ -73,7 +73,7 @@ class Api{
     }
     addFavorites = async (productId, newFavorite) => {
         try {
-            const { data } = await this.api.post(`/myFavorites/${productId}`, newFavorite)
+            const { data } = await this.api.post(`/myFavorites/add/${productId}`, newFavorite)
             return data
         } catch (error) {
             throw error
@@ -81,7 +81,7 @@ class Api{
     }
     deleteFavorite = async (productId) => {
         try {
-            const { data } = await this.api.delete(`/myFavorites/${productId}`)
+            const { data } = await this.api.delete(`/myFavorites/delete/${productId}`)
             return data
         } catch (error) {
             throw error

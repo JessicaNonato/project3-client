@@ -20,7 +20,7 @@ import api from './utils/api.utils';
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [favorites, setFavorites] = useState([]);
+  
 
    
 
@@ -38,18 +38,6 @@ function App() {
 //}, []);
    
 
-   const getFavorites = async () => {
-    try {
-        const favoritesApi = await api.getAllFavorites();
-        setFavorites( favoritesApi );
-
-    } catch (error) {
-        console.log(error);
-    }
-}
-//useEffect(() => {
-//  getFavorites();
-//}, []);
 
 
 
@@ -64,7 +52,7 @@ function App() {
           <Route path ="/category/citrico" element={<CitricoPage/>}/>
           <Route path ="/category/oriental" element={<OrientalPage/>}/>
           <Route path ="/category/aromatico" element={<AromaticoPage/>}/>
-          <Route path="/product/:id" element={<ProductCard  getCart={getCart} getFavorites={getFavorites} favorites={favorites}/>} />
+          <Route path="/product/:id" element={<ProductCard  getCart={getCart} />} />
           <Route path="/cart" element={<Cart/>}/>
   
           
