@@ -199,10 +199,11 @@ const handleReviewPost = async(e) => {
         )}
       </div>
       <div className='reviews'>      
-                <article>
-                    <h4 className="avaliacoes">Avaliações {'(' + reviews.length + ')'}</h4>
-                    <button className="avalie" onClick={toggle}>Avalie</button>
-                </article>
+                <div className="div-avalia">
+                  <div><h4 className="avaliacoes">Avaliações {'(' + reviews.length + ')'}</h4></div>
+                  <div><button className="avalie" onClick={toggle}>Avalie</button></div>
+                    
+                </div>
 
                 {reviews.length ? (
                   <ul className='review'>

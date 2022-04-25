@@ -8,6 +8,10 @@
     font-family: 'Akshar', sans-serif; 
 
 }
+.div-avalia{
+    display: flex;
+    justify-content: space-around;
+}
 .img-size {
     width: 380px;
     height: 30%;
@@ -71,7 +75,7 @@
     cursor: pointer;
 }
 .avalie{
-    width: 15%;
+    width: 80px;
     padding: 11px;
     color: white;
     font-size: 15px;
