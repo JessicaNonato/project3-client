@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+.page-fav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f1f2;
+  }
+.page-fav h1{
+    padding-top: 50px;
+    font-family: 'Ms Madi', cursive;
+    color: white;
+    font-size: 80px;
+}
+
+  .products-row-fav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    padding: 50px 50px;
+    justify-content: space-around;
+  
+  }
+  
+  .image-fav img {
+    width: 260px;
+    height: 240px;
+    object-fit: cover;
+  }
+  .info-fav {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+  }
+  .info-fav h3 {
+    display: block;
+    text-align: center;
+    color: lightgray;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    font-family: 'Akshar', sans-serif; 
+  }
+  
+  .name-fav {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+ 
+  .item-fav {
+      background-color: white;
+      margin: 20px;
+      width: 10px;
+      padding: 10px;
+      width: 280px;
+      height: 350px;
+      border-radius: 16px;
+      flex: none;
+  }
+  
+  @media screen and (max-width: 1470px) {
+      .image-banner {
+          width: 1300px;
+        }
+    }
+    @media screen and (max-width: 1250px) {
+      .image-banner {
+          width: 1000px;
+          height: 280;
+        }
+    }
+    @media screen and (max-width: 966px) {
+      .image-banner {
+          width: 900px;
+          height: 280px;
+        }
+    }
+    @media screen and (max-width: 666px) {
+      .image-banner{
+          width: 600px;
+          height: 180px;
+        }
+    }
+    @media screen and (max-width: 400px) {
+      .image-banner {
+          width: 380px;
+          height: 180px;
+        }
+    }
