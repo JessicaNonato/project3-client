@@ -10,7 +10,6 @@ import CitricoPage from './pages/CitricoPage';
 import OrientalPage from './pages/OrientalPage';
 import AromaticoPage from './pages/AromaticoPage';
 import Cart from "./components/Cart";
-import './styles/App.css';
 import ProductCard from './components/ProductCard';
 import 'antd/dist/antd.min.css';
 import api from './utils/api.utils';

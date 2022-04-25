@@ -22,3 +22,11 @@
     margin: 0px; 
 }
 
+.header-left{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+    margin-top: 5px;
+    align-items: flex-end;
+}
