@@ -6,12 +6,14 @@ import Subscribe from '../components/Subscribe';
 import '../styles/homePage.css'
 import Categories from '../components/Categories';
 import CarouselProducts from '../components/CarouselProducts';
+import TheCoeur from '../components/TheCoeur';
 
 const HomePage = () => {
     return(
         <div className='home-page'>
         
         <Header/>
+        <TheCoeur/>
         <CarouselBrands />
         <div className='perfect'>
         <h2 className='pp'>Perfect Parfums</h2>

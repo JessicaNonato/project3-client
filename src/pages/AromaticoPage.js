@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import api from '../utils/api.utils';
 import '../styles/categoriesPages.css';
 import Subscribe from '../components/Subscribe'
+import TheCoeur from "../components/TheCoeur";
 
 
 
@@ -34,6 +35,7 @@ const AromaticoPage = () => {
       return(
         <div>
         <Header />
+        <TheCoeur/>
         <div className="page">
         <img className="image-banner" src="https://images.pexels.com/photos/7291997/pexels-photo-7291997.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt=""/>
         <div className="products-row">
