@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import {TiHeartFullOutline} from 'react-icons/ti';
 import  '../styles/header.css';
 import Navbar from './Navbar';
+import SearchBar from './SearchBar';
 
 
 const Header = () => {
     return (
-      <div>
+      <>
         <div className="header-black">
-          <div>
+          <div className='header-left'>
+          <SearchBar/>
             <Link className="link-favorites" to={"/myfavorites"}>
-              {/* {" "} */}
               <TiHeartFullOutline size={25} style={{ color: "white" }} />
             </Link>
           </div>
@@ -19,7 +20,7 @@ const Header = () => {
             <Navbar />
           </div>
         </div>
-      </div>
+      </>
     );
 
 }
