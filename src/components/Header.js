@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {TiHeartFullOutline} from 'react-icons/ti';
+import { BsHandbag } from  'react-icons/bs';
 import  '../styles/Header.css';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar';
@@ -18,6 +19,7 @@ const Header = () => {
           </div>
           <div>
             <Navbar />
+            <BsHandbag style={{color:'white'}} size='22'/>
           </div>
         </div>
       </>
