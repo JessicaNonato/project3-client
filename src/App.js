@@ -1,5 +1,5 @@
 //Arrumar: private outlet está quebrando o código
-//Arrumar erro do antd que está dando no terminal, ver com DK
+
 import {React, useEffect, useState} from "react";
 import HomePage from './pages/Homepage';
 import { Routes, Route } from "react-router-dom";

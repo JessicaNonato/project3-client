@@ -11,6 +11,7 @@ const ButtonNavbar = styled.button`
   background: none;
   border: none;
   padding: 10px;
+  cursor: pointer;
 `
 
 const Navbar = () => {
