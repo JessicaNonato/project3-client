@@ -18,6 +18,7 @@ const CustomStyles = {
       top: '100px',
       left: '35%',
       right: 'auto',
+      height: '475px'
     }
   }
 
@@ -33,7 +34,7 @@ const ModalLogin = ({ open, onClose, changeForm }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const user = await api.login({email, password})
+      await api.login({email, password})
       navigate('/')
       console.log('sucess')
     } catch (error) {

@@ -18,6 +18,7 @@ const CustomStyles = {
     top: "100px",
     left: "35%",
     right: "auto",
+    height: '475px'
   },
 };
 

@@ -10,21 +10,30 @@ const SearchPage = () => {
     
     const getProducts = async ()=> {
         try {
-            const allProducts = await api.get('/products')
-            setProducts(allProducts.data)
+            const allProducts = await api.getAllProducts()
+            setProducts(allProducts)
         } catch (error) {
             console.error(error.response)
         }
     }
 
-    const filterProducts = products
-        .filter(product => product.name.toLowerCase()
-        .includes(value.toLowerCase()))
-
-
     useEffect(() => {
-        setFilteredList(filterProducts)
-    },[filterProducts])
+        getProducts()
+    }, [])
+
+
+    const getFilterProducts = () => {
+        try {
+            const filtered = products.filter(product => product.name.toLowerCase()).includes(inputValue.toLowerCase())
+        } catch (error) {
+            console.error(error)
+        }
+    }
+        
+    useEffect(()=>{
+        getFilterProducts()
+        setFilteredList(filtered)
+    }, [inputValue])
 
 
     return(
@@ -32,22 +41,19 @@ const SearchPage = () => {
         <Header/>
         <TheCoeur/>
         <div>
-            {products
-            ? products.map((product) => {
-                return (
-                    <div key={productId}>
-                    <Link to={'/products/:productId'}>
-                    {/* retorna img também */}
-                    <h3>{product.name}</h3>
-                    </Link>
-                    </div>                
-                )
-            } ) 
+           {filteredList ? filteredList.map (product => 
+                <div key={product._id}>
+                <Link to={`/products/${_id}`}>
+                <img src={img1} alt ='product-pic'/>
+                <h3>{product.name}</h3>
+                </Link>
+                </div>                
+             ) 
         : 'No results for the search.'}
         </div>
         <Footer/>
         </>
-    )
-}
+    );
+};
 
 export default SearchPage;
