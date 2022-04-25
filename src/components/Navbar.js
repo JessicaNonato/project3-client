@@ -54,7 +54,7 @@ const Navbar = () => {
       <ButtonNavbar
         type="button"
         onClick={handleOpenModalSignup}
-      ><FaUserCircle size={18}/>
+      ><FaUserCircle size={20}/>  Signup
       </ButtonNavbar>
       <ModalLogin
         open={modalIsOpenLogin}

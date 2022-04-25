@@ -19,7 +19,9 @@ const Header = () => {
           </div>
           <div>
             <Navbar />
-            <BsHandbag style={{color:'white'}} size='22'/>
+            <Link to={'/cart'}>
+              <BsHandbag style={{color:'white', marginLeft:'7px', cursor:'pointer'}} size={19}/>
+            </Link>
           </div>
         </div>
       </>
