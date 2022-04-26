@@ -18,7 +18,7 @@
 }
 .categories-section h2{
     font-family: 'Akshar', sans-serif; 
-    color: lightgray;
+    color: #504e4e;
 }
 .categories-section{
     display: flex;
@@ -29,7 +29,7 @@
     color: #e8b7c8;
 }
 .categories-section a:hover{
-    color: lightgray;
+    color: #504e4e;
 }
 @media screen and (max-width: 1100px) {
     .link-categories{

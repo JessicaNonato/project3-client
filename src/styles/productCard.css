@@ -32,7 +32,7 @@
 }
 .description p{
     font-size: 14px;
-    color: lightgrey;
+    color: #504e4e;
     font-family: 'Akshar', sans-serif; 
 }
 .description h6{
@@ -40,7 +40,7 @@
     font-family: 'Akshar', sans-serif; 
 }
 .description h3{
-    color: lightgrey;
+    color: #504e4e;
     font-family: 'Akshar', sans-serif; 
 }
 .button-card{
@@ -59,7 +59,7 @@
 .buy{
     width: 50%;
     padding: 11px;
-    color: white;
+    color: #504e4e;
     font-size: 15px;
     font-weight: 600;
     border: none;
@@ -75,7 +75,7 @@
     padding: 11px;
     color: white;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     border: none;
     border-radius: 100px 100px 100px 100px;
     transition: all, 240ms ease-in-out;
