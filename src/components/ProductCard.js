@@ -11,7 +11,11 @@ import "../styles/ProductCard.css";
 import { addPointerEvent } from "framer-motion";
 import { AiOutlineStar } from 'react-icons/ai';
 import { RiCloseFill } from 'react-icons/ri';
+
 import Categories from "./Categories";
+
+import TheCoeur from "./TheCoeur";
+
 
 const ProductCard = ({ getCart }) => {
   const { id } = useParams();
@@ -131,6 +135,7 @@ const handleReviewPost = async(e) => {
   return (
     <div>
       <Header />
+      <TheCoeur />
 
       <div className="card-page">
         {perfume ? (
