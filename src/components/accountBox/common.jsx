@@ -33,7 +33,6 @@ export const QuestionText = styled.p`
     font-size: 11px;
     color: #504e4e;
     font-weight: 100;
-    -webkit-text-decoration: none;
     text-decoration: none;
     margin-top: -2px;
     margin-bottom: 18px;

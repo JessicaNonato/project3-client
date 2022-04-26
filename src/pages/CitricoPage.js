@@ -3,8 +3,9 @@ import { useParams, Link } from 'react-router-dom';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import api from '../utils/api.utils';
-import '../styles/categoriesPages.css';
+import '../styles/CategoriesPages.css';
 import Subscribe from '../components/Subscribe';
+import Categories from  '../components/Categories';
 import TheCoeur from "../components/TheCoeur";
 
 
@@ -54,6 +55,7 @@ const CitricoPage = () => {
             )}): "No Results."}
               </div>
               </div>
+              <Categories/>
               <Subscribe/>
               <Footer />
             
