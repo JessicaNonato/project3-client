@@ -5,6 +5,9 @@ import { Link} from 'react-router-dom'
 import api from '../utils/api.utils'
 import TheCoeur from './TheCoeur';
 import Categories from  '../components/Categories';
+import Subscribe from './Subscribe';
+import '../styles/myFavorites.css'
+
 
 const MyFavorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -29,31 +32,37 @@ const MyFavorites = () => {
   return (
     <>
       <Header/>
+
       <TheCoeur/>
+
+      
+      
+      <div className='page-fav'>
+
       <h1>My Favorites Here</h1>
-      <div>
-      <div>
+      <div className="products-row-fav">
         {favorites.length ? favorites.map((favorite) => 
         <div key={favorite._id}>
-          <Link to={`/myfavorites/${favorite._id}`}>
-          <div>
-            <figure>
+          <Link className="perfume-link"to={`/product/${favorite._id}`}>
+          <div className="item-fav">
+            <figure  className="image-fav">
               <img
                 src={favorite.img1}
                 alt=""
               />
             </figure>
-            <div>
-              <h3>{favorite.name}</h3>
+            <div className="info-fav">
+              <h3 className="name-fav">{favorite.name}</h3>
             </div> 
           </div>
           </Link>
-          <button id={favorites._id}></button>
+          {/* <button id={favorites._id}></button> */}
         </div>
         ) : ""}
       </div>
       </div>
       <Categories/>
+       <Subscribe/>
       <Footer/>
     </>
   )
