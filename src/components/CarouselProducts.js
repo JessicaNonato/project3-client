@@ -15,7 +15,7 @@ const CarouselProducts = () => {
         try {
             const perfumesApi = await api.getAllProducts();
             setPerfumes( perfumesApi );
-            console.log(perfumesApi)
+            
     
         } catch (error) {
             console.log(error);

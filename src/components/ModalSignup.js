@@ -34,8 +34,8 @@ const ModalSignup = ({ open, onClose, changeForm }) => {
     e.preventDefault()
     try {
       const user =  await api.register({name, email, password})
-      // setMessage('Account created suceesfully!')
-      
+      // setMessage('Account created successfully!')
+      console.log('account created')
     } catch (error) {
       console.error(error)
     }

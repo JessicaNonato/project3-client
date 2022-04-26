@@ -19,7 +19,7 @@ const Header = () => {
               <TiHeartFullOutline size={25} style={{ color: "white" }} />
             </Link>
           </div>
-          <div>
+          <div> 
             <Navbar />
             <Link to={'/cart'}>
               <BsHandbag style={{color:'white', marginLeft:'7px', cursor:'pointer'}} size={19}/>

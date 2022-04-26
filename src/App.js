@@ -45,7 +45,7 @@ function App() {
         <Route path ="/category/oriental" element={<OrientalPage/>}/>
         <Route path ="/category/aromatico" element={<AromaticoPage/>}/>
         <Route path="/product/:id" element={<ProductCard  getCart={getCart} />} />
-        <Route path='/private' element={<PrivateOutlet/>}/>
+        {/* <Route path='/private' element={<PrivateOutlet/>}/> */}
         <Route path='/myfavorites' element={<MyFavorites/>}/>
         <Route path="/cart" element={<Cart/>}/>
           
