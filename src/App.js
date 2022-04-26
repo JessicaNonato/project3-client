@@ -48,8 +48,7 @@ function App() {
         {/* <Route path='/private' element={<PrivateOutlet/>}/> */}
         <Route path='/myfavorites' element={<MyFavorites/>}/>
         <Route path="/cart" element={<Cart/>}/>
-          
-          </Routes>
+      </Routes>
         
       
    
