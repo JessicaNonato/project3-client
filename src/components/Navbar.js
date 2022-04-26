@@ -19,7 +19,7 @@ const Navbar = () => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
   const [logout, setLogout] = useState(false);
-  // const [user, setUser] = useState(localStorage.getItem('Name'));
+  const [user, setUser] = useState(localStorage.getItem('name'));
 
   const navigate = useNavigate();
 
@@ -67,7 +67,8 @@ const Navbar = () => {
       <ButtonNavbar
         type="button"
         onClick={handleOpenModalSignup}
-      ><FaUserCircle size={20}/>  Signup
+      > <FaUserCircle size={20}/>
+        Signup 
       </ButtonNavbar>
       <ButtonNavbar
        type="button"

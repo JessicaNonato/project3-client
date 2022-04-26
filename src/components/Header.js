@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {TiHeartFullOutline} from 'react-icons/ti';
 import { BsHandbag } from  'react-icons/bs';
@@ -8,7 +8,6 @@ import SearchBar from './SearchBar';
 
 
 const Header = () => {
- 
 
     return (
       <>
@@ -20,6 +19,7 @@ const Header = () => {
             </Link>
           </div>
           <div> 
+            
             <Navbar />
             <Link to={'/cart'}>
               <BsHandbag style={{color:'white', marginLeft:'7px', cursor:'pointer'}} size={19}/>
