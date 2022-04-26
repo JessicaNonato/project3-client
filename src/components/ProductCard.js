@@ -7,11 +7,15 @@ import Subscribe from "./Subscribe";
 import CarouselProducts from "./CarouselProducts";
 import { TiHeartFullOutline } from "react-icons/ti";
 import { TiHeartOutline } from "react-icons/ti";
-import "../styles/productCard.css";
+import "../styles/ProductCard.css";
 import { addPointerEvent } from "framer-motion";
 import { AiOutlineStar } from 'react-icons/ai';
 import { RiCloseFill } from 'react-icons/ri';
+
+import Categories from "./Categories";
+
 import TheCoeur from "./TheCoeur";
+
 
 const ProductCard = ({ getCart }) => {
   const { id } = useParams();
@@ -247,6 +251,7 @@ const handleReviewPost = async(e) => {
             </div>
       <CarouselProducts />
       <div className="space"></div>
+      <Categories/>
       <Subscribe />
       <Footer />
     </div>

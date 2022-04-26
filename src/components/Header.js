@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {TiHeartFullOutline} from 'react-icons/ti';
-import  '../styles/header.css';
+import { BsHandbag } from  'react-icons/bs';
+import  '../styles/Header.css';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar';
 
 
 const Header = () => {
+ 
+
     return (
       <>
         <div className="header-black">
@@ -16,8 +19,11 @@ const Header = () => {
               <TiHeartFullOutline size={25} style={{ color: "white" }} />
             </Link>
           </div>
-          <div>
+          <div> 
             <Navbar />
+            <Link to={'/cart'}>
+              <BsHandbag style={{color:'white', marginLeft:'7px', cursor:'pointer'}} size={19}/>
+            </Link>
           </div>
         </div>
       </>

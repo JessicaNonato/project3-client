@@ -18,6 +18,7 @@ const CustomStyles = {
     top: "100px",
     left: "35%",
     right: "auto",
+    height: '475px'
   },
 };
 
@@ -27,15 +28,16 @@ const ModalSignup = ({ open, onClose, changeForm }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
-  const [message, setMessage] = useState('')
+  // const [message, setMessage] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
       const user =  await api.register({name, email, password})
-      
+      // setMessage('Account created successfully!')
+      console.log('account created')
     } catch (error) {
-      setMessage(error.message)
+      console.error(error)
     }
     setEmail('')
     setPassword('')

@@ -1,9 +1,8 @@
 import {React, useEffect, useState, useRef} from "react";
 import api from '../utils/api.utils'
-import '../styles/carouselProducts.css'
+import '../styles/CarouselProducts.css'
 import {IoIosArrowForward} from 'react-icons/io';
 import {IoIosArrowBack} from 'react-icons/io';
-import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
 import { Link } from 'react-router-dom';
 
 
@@ -16,7 +15,7 @@ const CarouselProducts = () => {
         try {
             const perfumesApi = await api.getAllProducts();
             setPerfumes( perfumesApi );
-            console.log(perfumesApi)
+            
     
         } catch (error) {
             console.log(error);

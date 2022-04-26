@@ -4,6 +4,7 @@ import ModalLogin from "./ModalLogin";
 import ModalSignup from "./ModalSignup";
 import {FaUserCircle} from 'react-icons/fa';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 Modal.setAppElement("#root");
 
@@ -11,11 +12,16 @@ const ButtonNavbar = styled.button`
   background: none;
   border: none;
   padding: 10px;
+  cursor: pointer;
 `
 
 const Navbar = () => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
+  const [logout, setLogout] = useState(false);
+  // const [user, setUser] = useState(localStorage.getItem('Name'));
+
+  const navigate = useNavigate();
 
   const handleOpenModalLogin = () => {
     setModalIsOpenLogin(true);
@@ -43,6 +49,14 @@ const Navbar = () => {
     handleOpenModalLogin();
   };
 
+  const handleLogout = () => {
+    localStorage.clear()
+    setLogout(true);
+    navigate('/')
+    console.log('feito o logout')
+  }
+
+  
   return (
     <>
       <ButtonNavbar
@@ -53,7 +67,12 @@ const Navbar = () => {
       <ButtonNavbar
         type="button"
         onClick={handleOpenModalSignup}
-      ><FaUserCircle size={18}/>
+      ><FaUserCircle size={20}/>  Signup
+      </ButtonNavbar>
+      <ButtonNavbar
+       type="button"
+       onClick={handleLogout}>
+        Logout
       </ButtonNavbar>
       <ModalLogin
         open={modalIsOpenLogin}

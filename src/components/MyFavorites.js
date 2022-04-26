@@ -4,8 +4,10 @@ import Footer from './Footer';
 import { Link} from 'react-router-dom'
 import api from '../utils/api.utils'
 import TheCoeur from './TheCoeur';
+import Categories from  '../components/Categories';
 import Subscribe from './Subscribe';
 import '../styles/myFavorites.css'
+
 
 const MyFavorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -30,9 +32,13 @@ const MyFavorites = () => {
   return (
     <>
       <Header/>
-      <TheCoeur />
+
+      <TheCoeur/>
+
+      
       
       <div className='page-fav'>
+
       <h1>My Favorites Here</h1>
       <div className="products-row-fav">
         {favorites.length ? favorites.map((favorite) => 
@@ -55,7 +61,8 @@ const MyFavorites = () => {
         ) : ""}
       </div>
       </div>
-        <Subscribe/>
+      <Categories/>
+       <Subscribe/>
       <Footer/>
     </>
   )
