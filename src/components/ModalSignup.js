@@ -28,15 +28,16 @@ const ModalSignup = ({ open, onClose, changeForm }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
-  const [message, setMessage] = useState('')
+  // const [message, setMessage] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
       const user =  await api.register({name, email, password})
+      // setMessage('Account created suceesfully!')
       
     } catch (error) {
-      setMessage(error.message)
+      console.error(error)
     }
     setEmail('')
     setPassword('')

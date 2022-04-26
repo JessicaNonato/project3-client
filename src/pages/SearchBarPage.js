@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TheCoeur from "../components/TheCoeur";
 import api from "../utils/api.utils";
+import Categories from  '../components/Categories';
 
 const SearchPage = () => {
     const [products, setProducts] = useState([])
@@ -51,6 +52,7 @@ const SearchPage = () => {
              ) 
         : 'No results for the search.'}
         </div>
+        <Categories/>
         <Footer/>
         </>
     );

@@ -17,6 +17,7 @@ const ButtonNavbar = styled.button`
 const Navbar = () => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
+  // const [user, setUser] = useState(localStorage.getItem('Name'));
 
   const handleOpenModalLogin = () => {
     setModalIsOpenLogin(true);

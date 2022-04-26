@@ -35,10 +35,11 @@ const ModalLogin = ({ open, onClose, changeForm }) => {
     e.preventDefault()
     try {
       await api.login({email, password})
-      navigate('/')
+      navigate('/private/products')
+      setMessage('Welcome!')
       console.log('sucess')
     } catch (error) {
-      setMessage(error.message)
+      console.error(error)
     }
     setEmail('')
     setPassword('')

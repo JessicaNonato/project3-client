@@ -6,6 +6,7 @@ import api from '../utils/api.utils';
 import '../styles/CategoriesPages.css';
 import Subscribe from '../components/Subscribe'
 import TheCoeur from "../components/TheCoeur";
+import Categories from  '../components/Categories';
 
 
 
@@ -56,6 +57,7 @@ const AmadeiradoPage = () => {
             )}): "No Results."}
               </div>
               </div>
+              <Categories/>
               <Subscribe/>
               <Footer />
             

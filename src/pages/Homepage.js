@@ -18,10 +18,8 @@ const HomePage = () => {
         <div className='perfect'>
         <h2 className='pp'>Perfect Parfums</h2>
         <h2 className='fym'>FIND YOUR MATCH</h2>
-
         <CarouselProducts/>
         </div>
-        
         <Categories/>
         <Subscribe/>
         <Footer/>

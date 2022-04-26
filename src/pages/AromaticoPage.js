@@ -4,7 +4,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import api from '../utils/api.utils';
 import '../styles/CategoriesPages.css';
-import Subscribe from '../components/Subscribe'
+import Subscribe from '../components/Subscribe';
+import Categories from  '../components/Categories';
 import TheCoeur from "../components/TheCoeur";
 
 
@@ -54,6 +55,7 @@ const AromaticoPage = () => {
       )}): "No Results."}
         </div>
         </div>
+        <Categories/>
         <Subscribe/>
         <Footer />
       

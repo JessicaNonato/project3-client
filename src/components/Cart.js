@@ -2,6 +2,7 @@ import {React, useEffect, useState, useMemo} from "react";
 import api from '../utils/api.utils';
 import Footer from "./Footer";
 import Header from "./Header";
+import TheCoeur from  './TheCoeur';
 
 
 const Cart = ()=> {
@@ -52,6 +53,7 @@ const Cart = ()=> {
       return(
           <div>
               <Header/> 
+              <TheCoeur/>
               <div>
                    <h1>Cart</h1>
                   <div>

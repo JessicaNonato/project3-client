@@ -3,6 +3,8 @@ import Header from './Header';
 import Footer from './Footer';
 import { Link} from 'react-router-dom'
 import api from '../utils/api.utils'
+import TheCoeur from './TheCoeur';
+import Categories from  '../components/Categories';
 
 const MyFavorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -27,6 +29,7 @@ const MyFavorites = () => {
   return (
     <>
       <Header/>
+      <TheCoeur/>
       <h1>My Favorites Here</h1>
       <div>
       <div>
@@ -50,6 +53,7 @@ const MyFavorites = () => {
         ) : ""}
       </div>
       </div>
+      <Categories/>
       <Footer/>
     </>
   )

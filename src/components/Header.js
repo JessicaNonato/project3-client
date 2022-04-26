@@ -8,6 +8,8 @@ import SearchBar from './SearchBar';
 
 
 const Header = () => {
+ 
+
     return (
       <>
         <div className="header-black">
