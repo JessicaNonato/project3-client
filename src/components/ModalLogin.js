@@ -46,7 +46,7 @@ const ModalLogin = ({ open, onClose, changeForm }) => {
   }
 
     return(
-<Modal
+      <Modal
       isOpen={open}
       onRequestClose={onClose}
       style={CustomStyles}

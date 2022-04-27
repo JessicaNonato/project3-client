@@ -43,7 +43,8 @@ const CarouselProducts = () => {
             </div>
         <div className="carouselProd" ref={carousel}>
            
-            {perfumes.map ((item) => { const {_id, name, img1, price} = item; return(
+            {perfumes.map ((item) => { const {_id, name, img1, price} = item; 
+            return(
                 <Link className="perfume-link" to={`/product/${_id}`}>
                  <div className="item" key={_id}>
                  <div className="image">

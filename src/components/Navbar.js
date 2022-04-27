@@ -19,7 +19,7 @@ const Navbar = () => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
   const [logout, setLogout] = useState(false);
-  const [user, setUser] = useState(localStorage.getItem('name'));
+  
 
   const navigate = useNavigate();
 

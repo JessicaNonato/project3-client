@@ -11,16 +11,11 @@ import Cart from "./components/Cart";
 import ProductCard from './components/ProductCard';
 import 'antd/dist/antd.min.css';
 import api from './utils/api.utils';
-import PrivateOutlet from './components/PrivateOutlet';
-
 
 
 function App() {
   const [cart, setCart] = useState([]);
   
-
-   
-
     const getCart = async () => {
       try {
           const cartApi = await api.getCart();
@@ -44,15 +39,10 @@ function App() {
         <Route path ="/category/citrico" element={<CitricoPage/>}/>
         <Route path ="/category/oriental" element={<OrientalPage/>}/>
         <Route path ="/category/aromatico" element={<AromaticoPage/>}/>
-        <Route path="/product/:id" element={<ProductCard  cart={cart} />} />
-        {/* <Route path='/private' element={<PrivateOutlet/>}/> */}
+        <Route path="/product/:id" element={<ProductCard  cart={cart} />}/>
         <Route path='/myfavorites' element={<MyFavorites/>}/>
         <Route path="/cart" element={<Cart/>}/>
-      </Routes>
-        
-      
-   
-  
+      </Routes>  
     </div>
   );
 }
