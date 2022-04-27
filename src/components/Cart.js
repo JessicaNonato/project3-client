@@ -7,17 +7,19 @@ import TheCoeur from  './TheCoeur';
 
 const Cart = ()=> {
     const [products, setProducts] = useState([]);
+    const token = localStorage.getItem('token');
 
     const getCartUser = async () => {
         try {
             const cartData = await api.getCart();
-            setProducts( cartData.cart.products);
+            setProducts(cartData.cart.products);
             console.log(cartData.cart.products)
     
         } catch (error) {
             console.log(error);
         }
     }
+    console.log(products)
 
     useEffect(() => {
         getCartUser();
@@ -44,11 +46,12 @@ const Cart = ()=> {
             console.log(error);
         }
     }
+       
 
     const somarProducts = useMemo(()=> products.map(item => item.quantity).reduce((acc, curr) => acc + curr, 0), [products]);
 
-    const somarPrice = useMemo(()=> products.map(item => item._id.price * item.quantity).reduce((acc, curr) => acc + curr, 0) / 100, [products]);
-
+    const somarPrice = useMemo(()=> products.map(item => item.productId.price * item.quantity).reduce((acc, curr) => acc + curr, 0) / 100, [products]);
+    
 
       return(
           <div>
@@ -61,10 +64,23 @@ const Cart = ()=> {
                 {products.map(item => <div key={item._id}>
                     <hr/>
                     <li>
-                     {item.productId.name}   
+                    <img src={item.productId.img1} alt=''/>
+                    <p>{item.productId.name}  </p>
+                     <p style={{fontWeight: 'bold'}}>R${item.productId.price}</p>
+                     <p> {item.quantity}</p>
+                     
                     </li> 
+                    
                     </div>)}
-
+                    <div className='sub'>
+                    <p>Total Products:</p>
+                    <span>{somarProducts}</span>
+                    </div>
+                    <div className='subtotal'>
+                    <p>Subtotal:</p>
+                    <span>R${somarPrice + '.00'}</span>
+                    </div>
+                    
                     </ul>
                    </div>
 
