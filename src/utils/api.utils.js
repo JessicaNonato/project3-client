@@ -162,7 +162,7 @@ class Api{
     }
     getCart = async () => {
         try {
-            const { data } = await this.api.get('/cart/')
+            const { data } = await this.api.get('/cart')
             return data
         } catch (error) {
             throw error

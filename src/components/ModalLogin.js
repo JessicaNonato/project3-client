@@ -37,6 +37,7 @@ const ModalLogin = ({ open, onClose, changeForm }) => {
       await api.login({email, password})
       navigate('/')
       setMessage('Welcome!')
+      onClose()
       console.log('success login')
     } catch (error) {
       console.error(error)
@@ -46,7 +47,7 @@ const ModalLogin = ({ open, onClose, changeForm }) => {
   }
 
     return(
-<Modal
+      <Modal
       isOpen={open}
       onRequestClose={onClose}
       style={CustomStyles}
