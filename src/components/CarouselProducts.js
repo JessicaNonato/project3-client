@@ -39,7 +39,7 @@ const CarouselProducts = () => {
     return(
         <div className="component">
              <div className="buttons">
-                <button onClick={handleLeftClick}><IoIosArrowBack size={30} style={{color:"lightgray"}}/> </button>
+                <button onClick={handleLeftClick}><IoIosArrowBack size={30} style={{color:"504e4e"}}/> </button>
             </div>
         <div className="carouselProd" ref={carousel}>
            
@@ -58,7 +58,7 @@ const CarouselProducts = () => {
             )})}
         </div>
         <div className="buttons">
-                <button onClick={handleRightClick}><IoIosArrowForward size={30} style={{color:"lightgray"}}/> </button>
+                <button onClick={handleRightClick}><IoIosArrowForward size={30} style={{color:"504e4e"}}/> </button>
             </div>
         </div>
     )

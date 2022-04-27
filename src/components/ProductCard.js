@@ -17,15 +17,16 @@ import Categories from "./Categories";
 import TheCoeur from "./TheCoeur";
 
 
-const ProductCard = ({ getCart }) => {
+const ProductCard = ({ cart }) => {
   const { id } = useParams();
   const [perfume, setPerfume] = useState([]);
   const [toggleImg, setToggleImg] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [favorites, setFavorites] = useState([]);
+  // const [favorites, setFavorites] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [review, setReview] = useState('');
   const [mod, setMod] = useState(false);
+  const [inCart, setInCart] = useState(false);
   const token = localStorage.getItem('token');
 
   const getPerfume = async () => {
@@ -42,49 +43,86 @@ const ProductCard = ({ getCart }) => {
   }, [id]);
 
   // verificar como consigo fazer o if das rotas add to cart e o add products in the cart
+ console.log(cart.cart.products)
+  const checkCart = () => {
+    const cartFilter = cart.cart.products.filter((item) => item.productId._id === perfume._id);
+
+   if (cartFilter.length > 0) {
+    setInCart(true)
+  } 
+  }
+  
+
   const addToCart = async () => {
     try {
       const creatCartOnApi = await api.createCart(id);
+      setInCart(true)
     } catch (error) {
       console.log(error);
     }
   };
+
+  const updateQuantityInTheCart = async () => {
+    try{
+      const update = await api.addProductsInTheCart(id);
+      setInCart(true)
+    }catch (error) {
+      console.log(error);
+    }
+  }
+
+  const isLogged = () =>{
+    if (token) {
+      getFavorites()
+    }
+  }
+   
 
   const getFavorites = async () => {
     try {
       const favoritesPerfumes = await api.getAllFavorites();
-      setFavorites(favoritesPerfumes.products);
-      console.log(favoritesPerfumes.products);
+      console.log(favoritesPerfumes.products)
+      const filteredFavorites = favoritesPerfumes.products.filter((item) => item._id === perfume._id);
+      if (filteredFavorites.length > 0) {
+        setIsFavorite(true)
+      } 
+  
+      // setFavorites(favoritesPerfumes.products)
+      // console.log(favoritesPerfumes.products);
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(() => {
-    getFavorites();
-  }, []);
+  console.log(isFavorite)
 
-  console.log(favorites);
+  // useEffect(() => {
+  //   getFavorites();
+  // }, [token]);
 
-  //como tornar automática a mudança?
-  const checkIfIsFavorite = () => {
-    const filtered = favorites.filter((item) => item._id === perfume._id);
-    console.log(filtered);
-    if (filtered.length > 0) {
-      return true;
-    }
+  // console.log(favorites);
 
-    return false;
-  };
+ 
+  // const checkIfIsFavorite = () => {
+  //   const filtered = favorites.filter((item) => item._id === perfume._id);
+    
+  //   console.log(filtered);
+  //   if (filtered.length > 0) {
+  //     return true;
+  //   }
+
+  //   return false;
+  // };
   
 
-  useEffect(() => {
-    setIsFavorite(checkIfIsFavorite());
-  }, [perfume]);
+  // useEffect(() => {
+  //   checkIfIsFavorite();
+  // }, [perfume]);
 
   const addFavorites = async () => {
     try {
       const addFavoritesApi = await api.addFavorites(id);
+      setIsFavorite(true);
       getFavorites();
     } catch (error) {
       console.log(error);
@@ -94,6 +132,7 @@ const ProductCard = ({ getCart }) => {
   const deleteOneFavorite = async () => {
     try {
       const deleteOneFavoritesApi = await api.deleteFavorite(id);
+      setIsFavorite(false);
       getFavorites();
     } catch (error) {
       console.log(error);
@@ -192,7 +231,8 @@ const handleReviewPost = async(e) => {
                 R${perfume.price}
               </p>
               <p>{perfume.description}</p>
-              <button className="buy" onClick={() => addToCart(perfume._id)}>
+              
+              <button className="buy" onClick={() => checkCart ? addToCart(perfume._id) : updateQuantityInTheCart(perfume._id)}>
                 COMPRAR
               </button>
             </div>
@@ -202,10 +242,11 @@ const handleReviewPost = async(e) => {
         )}
       </div>
       <div className='reviews'>      
-                <article>
-                    <h4 className="avaliacoes">Avaliações {'(' + reviews.length + ')'}</h4>
-                    <button className="avalie" onClick={toggle}>Avalie</button>
-                </article>
+                <div className="div-avalia">
+                  <div><h4 className="avaliacoes">Avaliações {'(' + reviews.length + ')'}</h4></div>
+                  <div><button className="avalie" onClick={toggle}>Avalie</button></div>
+                    
+                </div>
 
                 {reviews.length ? (
                   <ul className='review'>

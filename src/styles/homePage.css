@@ -4,19 +4,20 @@
 
 .pp{
     font-family: 'Ms Madi', cursive;
-    color: lightgray;
+    color: #504e4e;
     margin: 0;
     font-size: 40px;
 }
 .fym{
     font-family: 'Akshar', sans-serif; 
-    color: lightgray;
+    color: #504e4e;
 }
 .perfect{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
+
 }
 .home-page{
     background-color: #f1f1f2;
