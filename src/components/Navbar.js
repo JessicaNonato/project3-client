@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import ModalLogin from "./ModalLogin";
 import ModalSignup from "./ModalSignup";
-import {FaUserCircle} from 'react-icons/fa';
-import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { FaUserCircle } from "react-icons/fa";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 Modal.setAppElement("#root");
 
@@ -13,13 +13,13 @@ const ButtonNavbar = styled.button`
   border: none;
   padding: 10px;
   cursor: pointer;
-`
+`;
 
 const Navbar = () => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
-  const [logout, setLogout] = useState(false);
-  
+
+  const user = localStorage.getItem("token", "name");
 
   const navigate = useNavigate();
 
@@ -50,31 +50,31 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    localStorage.clear()
-    setLogout(true);
-    navigate('/')
-    console.log('feito o logout')
-  }
+    localStorage.clear();
+    navigate("/");
+    console.log("feito o logout");
+  };
 
-  
   return (
     <>
-      <ButtonNavbar
-        type="button"
-        onClick={handleOpenModalLogin}
-      > Login
-      </ButtonNavbar>
-      <ButtonNavbar
-        type="button"
-        onClick={handleOpenModalSignup}
-      > <FaUserCircle size={20}/>
-        Signup 
-      </ButtonNavbar>
-      <ButtonNavbar
-       type="button"
-       onClick={handleLogout}>
-        Logout
-      </ButtonNavbar>
+      {user ? (
+        <ButtonNavbar type="button" onClick={handleLogout}>
+          Logout
+        </ButtonNavbar>
+        ) : (
+        <>
+          <ButtonNavbar type="button" onClick={handleOpenModalLogin}>
+            {" "}
+            Login
+          </ButtonNavbar>
+          <ButtonNavbar type="button" onClick={handleOpenModalSignup}>
+            {" "}
+            <FaUserCircle size={20} />
+            Signup
+          </ButtonNavbar>
+        </>
+      )}
+
       <ModalLogin
         open={modalIsOpenLogin}
         onClose={handleCloseModalLogin}

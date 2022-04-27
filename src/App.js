@@ -14,20 +14,20 @@ import api from './utils/api.utils';
 
 
 function App() {
-  const [cart, setCart] = useState([]);
+//   const [cart, setCart] = useState([]);
   
-    const getCart = async () => {
-      try {
-          const cartApi = await api.getCart();
-          setCart( cartApi );
+//     const getCart = async () => {
+//       try {
+//           const cartApi = await api.getCart();
+//           setCart( cartApi );
   
-      } catch (error) {
-          console.log(error);
-      }
-  }
- useEffect(() => {
-   getCart();    
-}, []);
+//       } catch (error) {
+//           console.log(error);
+//       }
+//   }
+//  useEffect(() => {
+//    getCart();    
+// }, []);
    
 
   return (
@@ -39,7 +39,7 @@ function App() {
         <Route path ="/category/citrico" element={<CitricoPage/>}/>
         <Route path ="/category/oriental" element={<OrientalPage/>}/>
         <Route path ="/category/aromatico" element={<AromaticoPage/>}/>
-        <Route path="/product/:id" element={<ProductCard  cart={cart} />}/>
+        <Route path="/product/:id" element={<ProductCard/>}/>
         <Route path='/myfavorites' element={<MyFavorites/>}/>
         <Route path="/cart" element={<Cart/>}/>
       </Routes>  

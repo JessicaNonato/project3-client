@@ -43,7 +43,7 @@ const ProductCard = ({ cart }) => {
   }, [id]);
 
   // verificar como consigo fazer o if das rotas add to cart e o add products in the cart
- console.log(cart.cart.products)
+//  console.log(cart.cart.products)
   const checkCart = () => {
     const cartFilter = cart.cart.products.filter((item) => item.productId._id === perfume._id);
 
@@ -221,7 +221,7 @@ const handleReviewPost = async(e) => {
                   onClick={() => addFavorites(perfume._id)}
                 />
               )}
-              {console.log(perfume._id)}
+              {/* {console.log(perfume._id)} */}
             </div>
 
             <div className="description">
