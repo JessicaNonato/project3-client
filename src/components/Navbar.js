@@ -61,6 +61,7 @@ const Navbar = () => {
         <ButtonNavbar type="button" onClick={handleLogout}>
           Logout
         </ButtonNavbar>
+        
         ) : (
         <>
           <ButtonNavbar type="button" onClick={handleOpenModalLogin}>
