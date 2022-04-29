@@ -11,23 +11,11 @@ import Cart from "./components/Cart";
 import ProductCard from './components/ProductCard';
 import 'antd/dist/antd.min.css';
 import api from './utils/api.utils';
+import SearchBarPage from "./pages/SearchBarPage";
 
 
 function App() {
-//   const [cart, setCart] = useState([]);
-  
-//     const getCart = async () => {
-//       try {
-//           const cartApi = await api.getCart();
-//           setCart( cartApi );
-  
-//       } catch (error) {
-//           console.log(error);
-//       }
-//   }
-//  useEffect(() => {
-//    getCart();    
-// }, []);
+
    
 
   return (
@@ -42,6 +30,7 @@ function App() {
         <Route path="/product/:id" element={<ProductCard/>}/>
         <Route path='/myfavorites' element={<MyFavorites/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/search/:qry" element={<SearchBarPage/>}/>
       </Routes>  
     </div>
   );

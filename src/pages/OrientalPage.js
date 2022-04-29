@@ -18,7 +18,6 @@ const OrientalPage = () => {
         try {
             const perfumesApi = await api.getAllProducts();
             setPerfumes( perfumesApi );
-            console.log(perfumesApi)
     
         } catch (error) {
             console.log(error);
@@ -28,7 +27,7 @@ const OrientalPage = () => {
   
     const perfumesFiltrados = perfumes.filter(item => item.category === "oriental")
      
-    console.log(perfumesFiltrados)
+   
     useEffect(() => {
         getPerfumes();
       }, [categoryParams]);
@@ -41,8 +40,8 @@ const OrientalPage = () => {
               <img className="image-banner" src="https://images.pexels.com/photos/7291997/pexels-photo-7291997.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt=""/>
               <div className="products-row">
                   {perfumesFiltrados ? perfumesFiltrados.map ((item) => { const {_id, name, img1, price} = item; return(
-                 <Link className="perfume-link" to={`/product/${_id}`}>
-                 <div className="item-page" key={_id}>
+                 <Link key={_id} className="perfume-link" to={`/product/${_id}`}>
+                 <div className="item-page">
                  <div className="image-page">
                      <img src={img1} alt={name} />
                  </div>
