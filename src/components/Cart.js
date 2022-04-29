@@ -3,6 +3,7 @@ import api from '../utils/api.utils';
 import Footer from "./Footer";
 import Header from "./Header";
 import TheCoeur from  './TheCoeur';
+// import '../styles/Cart'
 
 
 const Cart = ()=> {

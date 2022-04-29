@@ -4,7 +4,8 @@ import ModalLogin from "./ModalLogin";
 import ModalSignup from "./ModalSignup";
 import { FaUserCircle } from "react-icons/fa";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { BsHandbag } from  'react-icons/bs';
 
 Modal.setAppElement("#root");
 
@@ -57,11 +58,14 @@ const Navbar = () => {
 
   return (
     <>
-      {user ? (
+      {user ? (<>
         <ButtonNavbar type="button" onClick={handleLogout}>
           Logout
         </ButtonNavbar>
-        
+         <Link to={'/cart'}>
+         <BsHandbag style={{color:'white', marginLeft:'7px', cursor:'pointer'}} size={19}/>
+        </Link>
+        </>
         ) : (
         <>
           <ButtonNavbar type="button" onClick={handleOpenModalLogin}>

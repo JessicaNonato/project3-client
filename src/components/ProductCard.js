@@ -87,15 +87,20 @@ const ProductCard = () => {
     }
   };
 
+  useEffect(() => {
+    getFavorites();
+  }, [perfume]);
+
   const getFavorites = async () => {
     try {
-      const favoritesPerfumes = await api.getAllFavorites();
-
+      const favoritesPerfumes = await api.getAllFavorites(); 
       const filteredFavorites = favoritesPerfumes.products.filter(
         (item) => item._id === perfume._id
       );
       if (filteredFavorites.length > 0) {
         setIsFavorite(true);
+      } else{
+        setIsFavorite(false);
       }
     } catch (error) {
       console.log(error);

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from 'react-icons/ai';
 import styled from 'styled-components';
-import { Link, Navigate, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
+
 
 const SearchIcon = styled.div`
   display: flex;
