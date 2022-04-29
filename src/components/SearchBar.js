@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from 'react-icons/ai';
 import styled from 'styled-components';
+import { Link} from 'react-router-dom';
 
 const SearchIcon = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ const SearchBar = () => {
   return (
     <>
     <SearchIcon>
-        <AiOutlineSearch style={{color: 'white'}} size='23'/>
+    <Link to={`/search/${value}`}> <button><AiOutlineSearch style={{color: 'white'}} size='23'/></button> </Link>
         <SearchInput 
             type='search' 
             value={value} 

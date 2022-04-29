@@ -45,8 +45,8 @@ const CarouselProducts = () => {
            
             {perfumes.map ((item) => { const {_id, name, img1, price} = item; 
             return(
-                <Link className="perfume-link" to={`/product/${_id}`}>
-                 <div className="item" key={_id}>
+                <Link key={_id} className="perfume-link" to={`/product/${_id}`}>
+                 <div className="item">
                  <div className="image">
                      <img src={img1} alt={name} />
                  </div>

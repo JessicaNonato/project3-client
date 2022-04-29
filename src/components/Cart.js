@@ -9,6 +9,7 @@ const Cart = ()=> {
     const [products, setProducts] = useState([]);
     const token = localStorage.getItem('token');
 
+
     const getCartUser = async () => {
         try {
             const cartData = await api.getCart();
@@ -78,7 +79,7 @@ const Cart = ()=> {
                     </div>
                     <div className='subtotal'>
                     <p>Subtotal:</p>
-                    <span>R${somarPrice + '.00'}</span>
+                    <span>R${somarPrice}</span>
                     </div>
                     
                     </ul>

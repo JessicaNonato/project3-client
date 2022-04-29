@@ -9,31 +9,42 @@ import { TiHeartFullOutline } from "react-icons/ti";
 import { TiHeartOutline } from "react-icons/ti";
 import "../styles/ProductCard.css";
 import { addPointerEvent } from "framer-motion";
-import { AiOutlineStar } from 'react-icons/ai';
-import { RiCloseFill } from 'react-icons/ri';
+import { AiOutlineStar } from "react-icons/ai";
+import { RiCloseFill } from "react-icons/ri";
 
 import Categories from "./Categories";
 
 import TheCoeur from "./TheCoeur";
 
-
-const ProductCard = ({ cart }) => {
+const ProductCard = () => {
   const { id } = useParams();
   const [perfume, setPerfume] = useState([]);
   const [toggleImg, setToggleImg] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   // const [favorites, setFavorites] = useState([]);
   const [reviews, setReviews] = useState([]);
-  const [review, setReview] = useState('');
+  const [review, setReview] = useState("");
   const [mod, setMod] = useState(false);
   const [inCart, setInCart] = useState(false);
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
+  const [cart, setCart] = useState([]);
+
+  const getCart = async () => {
+    try {
+      const cartApi = await api.getCart();
+      setCart(cartApi);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getCart();
+  }, []);
 
   const getPerfume = async () => {
     try {
       const perfumesApi = await api.getOneProduct(id);
       setPerfume(perfumesApi);
-      console.log(perfumesApi);
     } catch (error) {
       console.log(error);
     }
@@ -42,82 +53,54 @@ const ProductCard = ({ cart }) => {
     getPerfume();
   }, [id]);
 
-  // verificar como consigo fazer o if das rotas add to cart e o add products in the cart
-//  console.log(cart.cart.products)
   const checkCart = () => {
-    const cartFilter = cart.cart.products.filter((item) => item.productId._id === perfume._id);
+    const cartFilter = cart.cart.products.filter(
+      (item) => item.productId._id === perfume._id
+    );
 
-   if (cartFilter.length > 0) {
-    setInCart(true)
-  } 
-  }
-  
+    if (cartFilter.length > 0) {
+      setInCart(true);
+    }
+  };
 
   const addToCart = async () => {
     try {
       const creatCartOnApi = await api.createCart(id);
-      setInCart(true)
+      setInCart(true);
     } catch (error) {
       console.log(error);
     }
   };
 
   const updateQuantityInTheCart = async () => {
-    try{
-      const update = await api.addProductsInTheCart(id);
-      setInCart(true)
-    }catch (error) {
-      console.log(error);
-    }
-  }
-
-  const isLogged = () =>{
-    if (token) {
-      getFavorites()
-    }
-  }
-   
-
-  const getFavorites = async () => {
     try {
-      const favoritesPerfumes = await api.getAllFavorites();
-      console.log(favoritesPerfumes.products)
-      const filteredFavorites = favoritesPerfumes.products.filter((item) => item._id === perfume._id);
-      if (filteredFavorites.length > 0) {
-        setIsFavorite(true)
-      } 
-  
-      // setFavorites(favoritesPerfumes.products)
-      // console.log(favoritesPerfumes.products);
+      const update = await api.addProductsInTheCart(id);
+      setInCart(true);
     } catch (error) {
       console.log(error);
     }
   };
 
-  console.log(isFavorite)
+  const isLogged = () => {
+    if (token) {
+      getFavorites();
+    }
+  };
 
-  // useEffect(() => {
-  //   getFavorites();
-  // }, [token]);
+  const getFavorites = async () => {
+    try {
+      const favoritesPerfumes = await api.getAllFavorites();
 
-  // console.log(favorites);
-
- 
-  // const checkIfIsFavorite = () => {
-  //   const filtered = favorites.filter((item) => item._id === perfume._id);
-    
-  //   console.log(filtered);
-  //   if (filtered.length > 0) {
-  //     return true;
-  //   }
-
-  //   return false;
-  // };
-  
-
-  // useEffect(() => {
-  //   checkIfIsFavorite();
-  // }, [perfume]);
+      const filteredFavorites = favoritesPerfumes.products.filter(
+        (item) => item._id === perfume._id
+      );
+      if (filteredFavorites.length > 0) {
+        setIsFavorite(true);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const addFavorites = async () => {
     try {
@@ -143,33 +126,30 @@ const ProductCard = ({ cart }) => {
     try {
       const reviewsApi = await api.getAllReviews(id);
       setReviews(reviewsApi);
-     
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
     getReviews();
-}, [id]);
+  }, [id]);
 
-const toggle = () => {
+  const toggle = () => {
     setMod(!mod);
-};
+  };
 
-const handleReviewPost = async(e) => {
+  const handleReviewPost = async (e) => {
     e.preventDefault();
-    
-    try {
-        const add = await api.addReview(id, {review})
-        setReview('');
-        getReviews();
-        setMod(false);
-        
-    } catch(error) {
-        console.log(error);
-    }
-};
 
+    try {
+      const add = await api.addReview(id, { review });
+      setReview("");
+      getReviews();
+      setMod(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
@@ -221,7 +201,7 @@ const handleReviewPost = async(e) => {
                   onClick={() => addFavorites(perfume._id)}
                 />
               )}
-              {/* {console.log(perfume._id)} */}
+              
             </div>
 
             <div className="description">
@@ -231,8 +211,15 @@ const handleReviewPost = async(e) => {
                 R${perfume.price}
               </p>
               <p>{perfume.description}</p>
-              
-              <button className="buy" onClick={() => checkCart ? addToCart(perfume._id) : updateQuantityInTheCart(perfume._id)}>
+
+              <button
+                className="buy"
+                onClick={() =>
+                  checkCart
+                    ? addToCart(perfume._id)
+                    : updateQuantityInTheCart(perfume._id)
+                }
+              >
                 COMPRAR
               </button>
             </div>
@@ -241,57 +228,98 @@ const handleReviewPost = async(e) => {
           ""
         )}
       </div>
-      <div className='reviews'>      
-                <div className="div-avalia">
-                  <div><h4 className="avaliacoes">Avaliações {'(' + reviews.length + ')'}</h4></div>
-                  <div><button className="avalie" onClick={toggle}>Avalie</button></div>
-                    
-                </div>
+      <div className="reviews">
+        <div className="div-avalia">
+          <div>
+            <h4 className="avaliacoes">
+              Avaliações {"(" + reviews.length + ")"}
+            </h4>
+          </div>
+          <div>
+            <button className="avalie" onClick={toggle}>
+              Avalie
+            </button>
+          </div>
+        </div>
 
-                {reviews.length ? (
-                  <ul className='review'>
-                    {reviews.map((item) => 
-                    
-                    <li kew={item._id}>
-                        <div>
-                        <span>{/*<AiOutlineStar size={'20'} style={{ color: "lightgrey" }}/>*/}  {item.userId.name}</span>
-                        {item.createdAt &&
-                        <span style={{fontSize: '0.9rem', marginLeft: '20px', color: "lightgrey"} }>{item.createdAt.slice(0, 10)}</span>}
-                        </div>
-                        <div><p>"{item.review}"</p></div>
-                        
-                    </li>)}
-                  </ul>) : null}
-                  
+        {reviews.length ? (
+          <ul className="review">
+            {reviews.map((item) => (
+              <li kew={item.productId}>
                 <div>
-                    {!mod ? '' : ( <>
-                    {token ? (<>
-                        <form className='form' onSubmit={handleReviewPost}>
-                            <RiCloseFill style={{margin: '2% 92%'}} onClick={toggle}/>
-                            <div className='rev'>
-                                <h5 style={{fontWeight: 'bold'}}>Compartilhe a sua experiência</h5>
-                                <div>
-                                    <p>Avaliação *</p> 
-                                    <textarea value={review} onChange={(e)=> setReview(e.target.value)}/>
-                                </div>
-                                <p style={{fontSize: '0.9rem'}}>Descreva os pontos positivos e negativos do produto e da sua experiência em nossa loja.</p>
-                                <button className="publicar" type='submit'>Publicar Avaliação</button>  
-                            </div>
-                        </form></>) : 
-                        (<>
-                            <div className='go-login'>
-                                <RiCloseFill onClick={toggle} id='close-btn-small'/>
-                                <h5>Please login to write a review.</h5>
-                                <Link to='/signup'>LOGIN</Link>
-                            </div>
-                        </>)
-                    }
-                    </>)}          
-                </div>                
-            </div>
+                  <span>
+                    {" "}
+                    {item.userId.name}
+                  </span>
+                  {item.createdAt && (
+                    <span
+                      style={{
+                        fontSize: "0.9rem",
+                        marginLeft: "20px",
+                        color: "lightgrey",
+                      }}
+                    >
+                      {item.createdAt.slice(0, 10)}
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <p>"{item.review}"</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        <div>
+          {!mod ? (
+            ""
+          ) : (
+            <>
+              {token ? (
+                <>
+                  <form className="form" onSubmit={handleReviewPost}>
+                    <RiCloseFill
+                      style={{ margin: "2% 92%" }}
+                      onClick={toggle}
+                    />
+                    <div className="rev">
+                      <h5 style={{ fontWeight: "bold" }}>
+                        Compartilhe a sua experiência
+                      </h5>
+                      <div>
+                        <p>Avaliação *</p>
+                        <textarea
+                          value={review}
+                          onChange={(e) => setReview(e.target.value)}
+                        />
+                      </div>
+                      <p style={{ fontSize: "0.9rem" }}>
+                        Descreva os pontos positivos e negativos do produto e da
+                        sua experiência em nossa loja.
+                      </p>
+                      <button className="publicar" type="submit">
+                        Publicar Avaliação
+                      </button>
+                    </div>
+                  </form>
+                </>
+              ) : (
+                <>
+                  <div className="go-login">
+                    <RiCloseFill onClick={toggle} id="close-btn-small" />
+                    <h5>Please login to write a review.</h5>
+                    <Link to="/signup">LOGIN</Link>
+                  </div>
+                </>
+              )}
+            </>
+          )}
+        </div>
+      </div>
       <CarouselProducts />
       <div className="space"></div>
-      <Categories/>
+      <Categories />
       <Subscribe />
       <Footer />
     </div>
