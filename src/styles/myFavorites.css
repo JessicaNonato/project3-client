@@ -9,7 +9,7 @@
 .page-fav h1{
     padding-top: 50px;
     font-family: 'Ms Madi', cursive;
-    color: white;
+    color: #504e4e;
     font-size: 80px;
 }
 
@@ -63,6 +63,10 @@
       flex: none;
   }
   
+ .title-favorites {
+    color: #504e4e;
+  }
+
   @media screen and (max-width: 1470px) {
       .image-banner {
           width: 1300px;

@@ -1,0 +1,35 @@
+li {
+    list-style: none;
+}
+
+.photo-cart{
+    width: 10vw;
+    float: left;
+}
+
+.cart-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+        
+}
+
+.cartAll h1 {
+    display: flex;
+    margin-top: 3rem;
+    flex-direction: row;
+    justify-content:flex-start;
+    margin-left: 50px;
+    margin-bottom: 0.1rem;
+}
+
+.cart-page li{
+    margin-top: 0.8rem;
+}
+
+
+.sub-cart{
+    float: left;
+    flex-direction: column;
+    margin-top: 80px;
+}
