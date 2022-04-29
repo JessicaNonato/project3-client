@@ -215,6 +215,9 @@ const ProductCard = () => {
               <p style={{ fontWeight: "bold", color: "black" }}>
                 R${perfume.price}
               </p>
+              <p style={{ fontWeight: "bold", color: "black" }}>
+                {perfume.size}
+              </p>
               <p>{perfume.description}</p>
 
               <button
