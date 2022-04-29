@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from 'react-icons/ai';
 import styled from 'styled-components';
-import { Link} from 'react-router-dom';
+import { Link, Navigate, useNavigate} from 'react-router-dom';
 
 const SearchIcon = styled.div`
   display: flex;
@@ -19,16 +19,24 @@ const SearchInput = styled.input`
 
 const SearchBar = () => {
     const [value, setValue] = useState('')
+    const navigate = useNavigate()
+
+const enter = (ev) => {
+    if (ev.key === "Enter") {
+      ev.preventDefault();
+      navigate(`/search/${value}`)
+}}
     
   return (
     <>
     <SearchIcon>
-    <Link to={`/search/${value}`}> <button><AiOutlineSearch style={{color: 'white'}} size='23'/></button> </Link>
+    <AiOutlineSearch style={{color: 'white'}} size='23'/>
         <SearchInput 
             type='search' 
             value={value} 
             placeholder='Search'
             onChange={(e) => setValue(e.target.value)}
+            onKeyPress={enter}
             className='search-input'
         />
     </SearchIcon>
