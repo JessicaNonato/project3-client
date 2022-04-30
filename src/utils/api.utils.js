@@ -144,7 +144,7 @@ class Api{
 
     updateQuantity = async (productId, upQuantity) => {
         try {
-            const { data } = await this.api.put(`/cartproduct/add-quantity-of-product/${productId}`, upQuantity)
+            const { data } = await this.api.put(`/cartproduct/add-quantity-of-product/${productId}`, {quantity: upQuantity})
             return data
         } catch (error) {
             throw error
@@ -212,6 +212,15 @@ class Api{
     deleteCart = async (cartId) => {
         try {
             const { data } = await this.api.delete(`/cart/delete-cart/${cartId}`)
+            return data
+        } catch (error) {
+            throw error
+        }
+    }
+    subscribeEmail = async(subscribeInfo) => {
+        try{
+            const { data } = await this.api.post('/subscribe', subscribeInfo)
+           
             return data
         } catch (error) {
             throw error

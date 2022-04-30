@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import api from "../utils/api.utils";
 
 const SubsDiv = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
@@ -89,6 +90,15 @@ const ButtonForm = styled.button`
 
 const Subscribe = () => {
 
+    const sub = async (email) => {
+        try {
+          const subEmail = await api.subscribeEmail(email);
+          
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
     return(
         <SubsDiv>
             <SubsDivText>
@@ -97,7 +107,7 @@ const Subscribe = () => {
             <SubsDivForm>
                 <SubsForm>
                 <InputForm type="text" placeholder="your e-mail here"></InputForm>
-                <ButtonForm>Send</ButtonForm>
+                <ButtonForm onClick={(e) => sub(e)}>Send</ButtonForm>
                 </SubsForm>
             </SubsDivForm>
 

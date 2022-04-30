@@ -38,7 +38,10 @@ const ProductCard = () => {
     }
   };
   useEffect(() => {
-    getCart();
+    if (token) {
+      getCart();
+    }
+    
   }, []);
 
   const getPerfume = async () => {
@@ -80,16 +83,7 @@ const ProductCard = () => {
       console.log(error);
     }
   };
-
-  const isLogged = () => {
-    if (token) {
-      getFavorites();
-    }
-  };
-
-  useEffect(() => {
-    getFavorites();
-  }, [perfume]);
+  
 
   const getFavorites = async () => {
     try {
@@ -106,6 +100,14 @@ const ProductCard = () => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (token) {
+      getFavorites();
+    }
+  }, [perfume]);
+
+
 
   const addFavorites = async () => {
     try {

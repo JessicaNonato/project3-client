@@ -1,4 +1,5 @@
 import {React, useEffect, useState, useMemo} from "react";
+import {IoIosClose} from 'react-icons/io';
 import api from '../utils/api.utils';
 import Footer from "./Footer";
 import Header from "./Header";
@@ -8,6 +9,7 @@ import '../styles/Cart.css'
 
 const Cart = ()=> {
     const [products, setProducts] = useState([]);
+    const [quantity, setQuantity] = useState();
     const token = localStorage.getItem('token');
 
 
@@ -27,9 +29,11 @@ const Cart = ()=> {
         getCartUser();
       }, []);
     
-      const deleteProduct = async (id) => {
+    const handleQuantity = async(id, e) => {
+        const quantity = parseInt(e.target.value);
+    
         try {
-            const productDelete = await api.deleteProductInTheCart(id);
+            const updateQuant = await api.updateQuantity(id, quantity);
             getCartUser()
     
         } catch (error) {
@@ -37,11 +41,9 @@ const Cart = ()=> {
         }
     }
 
-    const handleQuantity = async(id, e) => {
-        const quantity = parseInt(e.target.value);
-    
+    const deleteProductUser = async(id) => {
         try {
-            const updateQuant = await api.updateQuantity(id);
+            const deleteCartData = await api.deleteProductInTheCart(id);
             getCartUser()
     
         } catch (error) {
@@ -52,7 +54,7 @@ const Cart = ()=> {
 
     const somarProducts = useMemo(()=> products.map(item => item.quantity).reduce((acc, curr) => acc + curr, 0), [products]);
 
-    const somarPrice = useMemo(()=> products.map(item => item.productId.price * item.quantity).reduce((acc, curr) => acc + curr, 0) / 100, [products]);
+    const somarPrice = useMemo(()=> products.map(item => item.productId.price * item.quantity).reduce((acc, curr) => acc + curr, 0), [products]);
     
 
       return(
@@ -69,7 +71,11 @@ const Cart = ()=> {
                     <img src={item.productId.img1} alt='' className="photo-cart"/>
                     <p>{item.productId.name}  </p>
                      <p style={{fontWeight: 'bold'}}>R${item.productId.price}</p>
+                     <div>
+                        <input type='number' value={item.quantity} onChange={(e)=> handleQuantity(item.productId._id, e)}/>
+                     </div>
                      <p>Quantity: {item.quantity}</p>
+                     <button onClick={() => deleteProductUser(item.productId._id)}>< IoIosClose style={{color:'black', marginLeft:'7px', cursor:'pointer'}} size={19}/></button>
                      
                     </li> 
                     
@@ -81,8 +87,9 @@ const Cart = ()=> {
                     </div>
                     <div className='subtotal'>
                     <p>Subtotal:</p>
-                    <span>R${somarPrice}</span>
+                    <span>R${somarPrice}.00</span>
                     </div>
+                    <button>Finalizar Compra</button>
                     </div>
                     
                     </ul>
