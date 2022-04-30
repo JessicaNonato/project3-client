@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {TiHeartFullOutline} from 'react-icons/ti';
-import  '../styles/header.css';
+import  '../styles/Header.css';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar';
 
