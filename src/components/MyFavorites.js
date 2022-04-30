@@ -39,7 +39,7 @@ const MyFavorites = () => {
       
       <div className='page-fav'>
 
-      <h1>My Favorites Here</h1>
+      <h1 >My Favorites Here</h1>
       <div className="products-row-fav">
         {favorites.length ? favorites.map((favorite) => 
         <div key={favorite._id}>

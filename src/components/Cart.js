@@ -3,7 +3,7 @@ import api from '../utils/api.utils';
 import Footer from "./Footer";
 import Header from "./Header";
 import TheCoeur from  './TheCoeur';
-// import '../styles/Cart'
+import '../styles/Cart.css'
 
 
 const Cart = ()=> {
@@ -59,21 +59,22 @@ const Cart = ()=> {
           <div>
               <Header/> 
               <TheCoeur/>
-              <div>
+              <div className="cartAll">
                    <h1>Cart</h1>
-                  <div>
+                  <div className='cart'>
                   <ul className='cart-page'>
                 {products.map(item => <div key={item._id}>
-                    <hr/>
+                    <hr style={{width: '50vw', marginLeft: '0.6rem'}}/>
                     <li>
-                    <img src={item.productId.img1} alt=''/>
+                    <img src={item.productId.img1} alt='' className="photo-cart"/>
                     <p>{item.productId.name}  </p>
                      <p style={{fontWeight: 'bold'}}>R${item.productId.price}</p>
-                     <p> {item.quantity}</p>
+                     <p>Quantity: {item.quantity}</p>
                      
                     </li> 
                     
                     </div>)}
+                    <div className="sub-cart"> 
                     <div className='sub'>
                     <p>Total Products:</p>
                     <span>{somarProducts}</span>
@@ -81,6 +82,7 @@ const Cart = ()=> {
                     <div className='subtotal'>
                     <p>Subtotal:</p>
                     <span>R${somarPrice}</span>
+                    </div>
                     </div>
                     
                     </ul>
