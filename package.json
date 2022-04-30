@@ -2,7 +2,7 @@
   "name": "project3",
   "version": "0.1.0",
   "engines": {
-    "node": "16.14.0"
+    "node": "16.x"
   },
   "private": true,
   "dependencies": {
