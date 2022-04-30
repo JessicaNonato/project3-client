@@ -11,6 +11,7 @@ import api from '../utils/api.utils';
 
 
 
+
 Modal.setAppElement("#root");
 
 const ButtonNavbar = styled.button`
@@ -25,13 +26,17 @@ const BadgeSpan = styled.span`
   border-radius: 50%;
   font-size: 12px;
   color: white;
-  padding: 2px 7px;
+  padding: 1px 5px;
+  position: relative;
+  margin-left: 23px;
+
 `
 
 const Navbar = () => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
   const [products, setProducts] = useState([]);
+  
   const token = localStorage.getItem("token");
 
   const user = localStorage.getItem("token", "name");
@@ -91,6 +96,8 @@ useEffect(() => {
   
 }, []);
 
+
+
   return (
     <>
       {user ? (<>
@@ -98,7 +105,7 @@ useEffect(() => {
           Logout
         </ButtonNavbar>
          <Link to={'/cart'}>
-         <BsHandbag style={{color:'white', marginLeft:'7px', cursor:'pointer'}} size={23}/>
+         <BsHandbag style={{color:'white', marginLeft:'7px', cursor:'pointer', position:'absolute', marginTop: '6px'}} size={23}/>
          <BadgeSpan>{products.length}</BadgeSpan>
         </Link>
         </>
