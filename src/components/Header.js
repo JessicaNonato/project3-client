@@ -1,12 +1,13 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import {TiHeartFullOutline} from 'react-icons/ti';
 import  '../styles/Header.css';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar';
+import {React} from "react";
 
 
 const Header = () => {
+ 
 
     return (
       <>
