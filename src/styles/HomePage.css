@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
+
+
+.pp{
+    font-family: 'Ms Madi', cursive;
+    color: #504e4e;
+    margin: 0;
+    font-size: 40px;
+}
+.fym{
+    font-family: 'Akshar', sans-serif; 
+    color: #504e4e;
+}
+.perfect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+
+}
+.home-page{
+    background-color: #f1f1f2;
+}

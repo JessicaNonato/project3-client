@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
+.card-page{
+    margin: 70px 15vw;
+    display: flex;
+    flex-direction: column; 
+    font-size: 1rem;
+    font-family: 'Akshar', sans-serif; 
+    
+
+}
+.div-avalia{
+    display: flex;
+    justify-content: space-around;
+}
+.img-size {
+    width: 380px;
+    height: 30%;
+    object-fit: contain;
+    margin-left: 10px;
+}
+.card {
+    display: flex;
+    align-items:flex-start;
+    margin-top: 20px;
+    padding-top: 30px;
+    font-size: 0.9rem;
+    font-family: 'Akshar', sans-serif; 
+}
+.description {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    margin-left: 70px; 
+}
+.description p{
+    font-size: 14px;
+    color: #504e4e;
+    font-family: 'Akshar', sans-serif; 
+}
+.description h6{
+    font-size: 16px; 
+    font-family: 'Akshar', sans-serif; 
+}
+.description h3{
+    color: #504e4e;
+    font-family: 'Akshar', sans-serif; 
+}
+.button-card{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.button-card img{
+    width: 70px;
+    height: 70px;
+    border: 1.5px solid lightgrey;
+    object-fit: cover;
+    margin-bottom: 10px;   
+}
+.buy{
+    width: 50%;
+    padding: 11px;
+    color: #504e4e;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 100px 100px 100px 100px;
+    transition: all, 240ms ease-in-out;
+    background: #F9DCDF;
+    margin-bottom: 15px; 
+    font-family: 'Akshar', sans-serif; 
+    cursor: pointer;
+}
+.avalie{
+    width: 80px;
+    padding: 11px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 100px 100px 100px 100px;
+    transition: all, 240ms ease-in-out;
+    background: black;
+    margin-bottom: 15px; 
+    font-family: 'Akshar', sans-serif; 
+    cursor: pointer;
+}
+.avaliacoes{
+    font-family: 'Akshar', sans-serif; 
+    font-size: 25px;
+}
+.reviews{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.reviews article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: start;
+    position: relative;
+    margin: 50px;
+}
+.review{
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-family: 'Akshar', sans-serif; 
+    padding: 0;
+    margin: 0px 60px 60px 60px;
+}
+.review li{
+    display: flex;
+    flex-direction: column;
+}
+.publicar{
+    width: 15%;
+    padding: 11px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 100px 100px 100px 100px;
+    transition: all, 240ms ease-in-out;
+    background: black;
+    margin-bottom: 15px; 
+    font-family: 'Akshar', sans-serif; 
+    cursor: pointer;
+}
+.rev p{
+    font-family: 'Akshar', sans-serif; 
+}
+.rev h5{
+    font-family: 'Akshar', sans-serif; 
+    font-size: 15px;
+}
+.rev textarea{
+    width: 300px;
+    height: 200px;
+}
+.rev{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.space{
+    height: 50px;
+}
+
