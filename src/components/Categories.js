@@ -5,7 +5,7 @@ import {GiHerbsBundle} from 'react-icons/gi';
 import {GiOrangeSlice} from 'react-icons/gi';
 import {React} from "react";
 import { Link } from 'react-router-dom';
-import '../styles/Categories.css'
+import '../styles/categories.css'
 
 
 const Categories = () => {

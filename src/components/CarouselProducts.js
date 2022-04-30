@@ -1,6 +1,6 @@
 import {React, useEffect, useState, useRef} from "react";
 import api from '../utils/api.utils'
-import '../styles/CarouselProducts.css'
+import '../styles/carouselProducts.css'
 import {IoIosArrowForward} from 'react-icons/io';
 import {IoIosArrowBack} from 'react-icons/io';
 import { Link } from 'react-router-dom';

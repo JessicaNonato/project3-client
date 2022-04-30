@@ -7,7 +7,7 @@ import Subscribe from "./Subscribe";
 import CarouselProducts from "./CarouselProducts";
 import { TiHeartFullOutline } from "react-icons/ti";
 import { TiHeartOutline } from "react-icons/ti";
-import "../styles/ProductCard.css";
+import "../styles/productCard.css";
 import { addPointerEvent } from "framer-motion";
 import { AiOutlineStar } from "react-icons/ai";
 import { RiCloseFill } from "react-icons/ri";
