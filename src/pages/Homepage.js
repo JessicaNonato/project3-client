@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import CarouselBrands from '../components/CarouselBrands'
 import Subscribe from '../components/Subscribe';
-import '../styles/HomePage.css'
+import '../styles/homePage.css'
 import Categories from '../components/Categories';
 import CarouselProducts from '../components/CarouselProducts';
 import TheCoeur from '../components/TheCoeur';

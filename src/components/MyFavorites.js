@@ -6,7 +6,7 @@ import api from '../utils/api.utils'
 import TheCoeur from './TheCoeur';
 import Categories from  '../components/Categories';
 import Subscribe from './Subscribe';
-import '../styles/MyFavorites.css'
+import '../styles/myFavorites.css'
 
 
 const MyFavorites = () => {
