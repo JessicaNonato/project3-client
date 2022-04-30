@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import api from '../utils/api.utils';
-import '../styles/categoriesPages.css';
+import '../styles/CategoriesPages.css';
 import Subscribe from '../components/Subscribe'
 import TheCoeur from "../components/TheCoeur";
 import Categories from  '../components/Categories';
