@@ -1,22 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
 .card-page{
-    margin: 70px 15vw;
-    display: flex;
-    flex-direction: column; 
+    margin: 70px 21vw;
     font-size: 1rem;
     font-family: 'Akshar', sans-serif; 
-    
-
+    max-width: 1400px;
+}
+.product-details{
+    display: flex;
+    flex-direction: column; 
 }
 .div-avalia{
     display: flex;
     justify-content: space-around;
 }
+.images{
+    display: flex;
+}
 .img-size {
     width: 380px;
-    height: 30%;
-    object-fit: contain;
+    height: 380px;
+    object-fit: cover;
     margin-left: 10px;
 }
 .card {
@@ -156,3 +160,34 @@
     height: 50px;
 }
 
+@media screen and (max-width: 1400px) {
+    .card{
+    display: flex;
+    flex-direction: column;
+    }
+    
+  }
+  @media screen and (max-width: 1250px) {
+    .carouselProd{
+    max-width: 900px;
+    }
+  }
+  @media screen and (max-width: 966px) {
+    .carouselProd{
+    max-width: 600px;
+    }
+  }
+  @media screen and (max-width: 666px) {
+      .images{
+          margin-bottom: 30px;
+      }
+    .img-size {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin-left: 10px;
+    }
+    .description{
+        margin-left: 0px;
+    }
+  }

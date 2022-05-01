@@ -12,12 +12,12 @@
   padding-top: 20px;
 }
 .products-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   max-width: 1600px;
   padding: 50px 50px;
   justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
 }
 
@@ -70,8 +70,8 @@
     .image-banner {
         width: 1300px;
       }
-  }
-  @media screen and (max-width: 1250px) {
+  } 
+   @media screen and (max-width: 1250px) {
     .image-banner {
         width: 1000px;
         height: 280;

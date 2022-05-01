@@ -10,8 +10,9 @@
 }
 .categories-div{
     display: flex;
+    justify-content: center;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
     margin: 30px 20px;
     max-width: 1020px;
@@ -33,7 +34,7 @@
 }
 
 
-@media screen and (max-width: 1100px) {
+/* @media screen and (max-width: 1100px) {
     .link-categories{
         border: 1px solid #F9DCDF;
         border-radius: 90px;
@@ -53,4 +54,4 @@
         margin: 20px;
         max-width: 1020px;
     }
-  }
+  } */
