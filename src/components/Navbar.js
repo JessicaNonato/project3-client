@@ -29,6 +29,7 @@ const BadgeSpan = styled.span`
   padding: 1px 5px;
   position: relative;
   margin-left: 15px;
+  margin-right: 15px;
 
 `
 const Auth = styled.div`

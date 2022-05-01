@@ -6,7 +6,7 @@ import { TiHeartOutline } from "react-icons/ti";
 import "../styles/ProductCard.css";
 
 
-const ProductCard = (getCart) => {
+const ProductCard = () => {
   const { id } = useParams();
   const [perfume, setPerfume] = useState([]);
   const [toggleImg, setToggleImg] = useState(false);
@@ -15,20 +15,20 @@ const ProductCard = (getCart) => {
   const token = localStorage.getItem("token");
   const [cart, setCart] = useState([]);
 
-  // const getCart = async () => {
-  //   try {
-  //     const cartApi = await api.getCart();
-  //     setCart(cartApi);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   if (token) {
-  //     getCart();
-  //   }
+  const getCart = async () => {
+    try {
+      const cartApi = await api.getCart();
+      setCart(cartApi);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    if (token) {
+      getCart();
+    }
     
-  // }, [token]);
+  }, [token]);
 
   const getPerfume = async () => {
     try {
@@ -124,6 +124,7 @@ const ProductCard = (getCart) => {
       <div className="card-page">
         {perfume ? (
           <div className="card">
+            <div className="images">
             <div className="button-card">
               <img
                 src={perfume.img1}
@@ -168,6 +169,7 @@ const ProductCard = (getCart) => {
                 />
               )}
               
+            </div>
             </div>
 
             <div className="description">

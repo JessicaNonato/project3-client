@@ -29,8 +29,8 @@ const SubsText = styled.p`
         font-family: 'Ms Madi', cursive;
         font-size: 40px;
         color: white;
-        padding: 0;
-        margin: 0;
+        padding: 10px;
+        margin: 0px;
     }
 `
 const SubsDivText = styled.div`
@@ -52,7 +52,7 @@ const InputForm = styled.input`
         border-radius: 20px;
         padding: 5px;
         margin-right: 5px;
-        margin-bottom: 5px;
+        margin-bottom:20px;
         color: lightgray;
         width: 180px;
     }

@@ -13,6 +13,9 @@ const FooterColumn = styled.div`
   background-color: #000;
   height: 150px;
   flex-direction: column;
+  @media screen and (max-width: 690px){
+    height: 200px;
+    }
   
 `
 const TitleFooter = styled.h1`
@@ -20,13 +23,14 @@ const TitleFooter = styled.h1`
   font-size: 25px;
   font-family: 'Ms Madi';
   @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+  
 `
 
 const Title = styled.div`
   display: flex;
   padding: 2px;
-  margin-top: -30px;
-  margin-bottom: -15px;
+  margin-top: 10px;
+  margin-bottom: -25px;
 `
 const Link = styled(LinkReact)`
   padding: 15px;
@@ -46,6 +50,13 @@ const LinkFooter = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: -10px;
+  @media screen and (max-width: 768px){
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+    }
 `
 
 const Footer = () => {
