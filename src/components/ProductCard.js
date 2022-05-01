@@ -6,7 +6,7 @@ import { TiHeartOutline } from "react-icons/ti";
 import "../styles/ProductCard.css";
 
 
-const ProductCard = () => {
+const ProductCard = (getCart) => {
   const { id } = useParams();
   const [perfume, setPerfume] = useState([]);
   const [toggleImg, setToggleImg] = useState(false);
@@ -15,20 +15,20 @@ const ProductCard = () => {
   const token = localStorage.getItem("token");
   const [cart, setCart] = useState([]);
 
-  const getCart = async () => {
-    try {
-      const cartApi = await api.getCart();
-      setCart(cartApi);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    if (token) {
-      getCart();
-    }
+  // const getCart = async () => {
+  //   try {
+  //     const cartApi = await api.getCart();
+  //     setCart(cartApi);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (token) {
+  //     getCart();
+  //   }
     
-  }, [token]);
+  // }, [token]);
 
   const getPerfume = async () => {
     try {
@@ -56,6 +56,7 @@ const ProductCard = () => {
     try {
       const creatCartOnApi = await api.createCart(id);
       setInCart(true);
+      getCart()
     } catch (error) {
       console.log(error);
     }
@@ -65,6 +66,7 @@ const ProductCard = () => {
     try {
       const update = await api.addProductsInTheCart(id);
       setInCart(true);
+      getCart()
     } catch (error) {
       console.log(error);
     }

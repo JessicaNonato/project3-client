@@ -1,20 +1,8 @@
 import { React, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import api from "../utils/api.utils";
-import Footer from "./Footer";
-import Header from "./Header";
-import Subscribe from "./Subscribe";
-import CarouselProducts from "./CarouselProducts";
-import { TiHeartFullOutline } from "react-icons/ti";
-import { TiHeartOutline } from "react-icons/ti";
 import "../styles/ProductCard.css";
-import { addPointerEvent } from "framer-motion";
-import { AiOutlineStar } from "react-icons/ai";
 import { RiCloseFill } from "react-icons/ri";
-
-import Categories from "./Categories";
-
-import TheCoeur from "./TheCoeur";
 
 const Reviews = () => {
   const { id } = useParams();

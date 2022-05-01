@@ -31,6 +31,7 @@ class Api{
         try {
             const { data } = await this.api.post('/auth/login', loginInfo)
             localStorage.setItem('token', data.token)
+            localStorage.setItem('user', JSON.stringify(data.user))
             return { data }
         } catch (error) {
             throw error

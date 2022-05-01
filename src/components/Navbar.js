@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import Modal from "react-modal";
 import ModalLogin from "./ModalLogin";
 import ModalSignup from "./ModalSignup";
@@ -28,18 +28,25 @@ const BadgeSpan = styled.span`
   color: white;
   padding: 1px 5px;
   position: relative;
-  margin-left: 23px;
+  margin-left: 15px;
+
+`
+const Auth = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
 `
 
-const Navbar = () => {
+const Navbar = (cart) => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
   const [products, setProducts] = useState([]);
   
-  const token = localStorage.getItem("token");
 
-  const user = localStorage.getItem("token", "name");
+  const user = localStorage.getItem("user");
+  const name = JSON.parse(user).name;
+ 
 
   const navigate = useNavigate();
 
@@ -77,38 +84,40 @@ const Navbar = () => {
 
 
   
-  const getCartUser = async () => {
-    try {
-        const cartData = await api.getCart();
-        setProducts(cartData.cart.products);
-        getCartUser();
-        console.log(cartData.cart.products)
+//   const getCartUser = async () => {
+//     try {
+//         const cartData = await api.getCart();
+//         setProducts(cartData.cart.products);
+//         console.log(cartData.cart.products)
 
-    } catch (error) {
-        console.log(error);
-    }
-}
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
-useEffect(() => {
-  if (token) {
-    getCartUser();
-  }
-  
-}, []);
+// useEffect(() => {
+//   if (user) {
+//     getCartUser();
+//   }  
+// }, [user]);
+console.log(cart)
 
+// const somarNoBadge = useMemo(()=> cart.map(item => item.productId.price * item.quantity).reduce((acc, curr) => acc + curr, 0), [products]);
+    
 
 
   return (
     <>
-      {user ? (<>
+      {user ? (<Auth>
+        <p style={{margin:0, paddingRight: 15}}>Olá, {name}</p>
         <ButtonNavbar type="button" onClick={handleLogout}>
           Logout
         </ButtonNavbar>
          <Link to={'/cart'}>
-         <BsHandbag style={{color:'white', marginLeft:'7px', cursor:'pointer', position:'absolute', marginTop: '6px'}} size={23}/>
+         <BsHandbag style={{color:'white', marginLeft:'0px', cursor:'pointer', position:'absolute', marginTop: '0px'}} size={23}/>
          <BadgeSpan>{products.length}</BadgeSpan>
         </Link>
-        </>
+        </Auth>
         ) : (
         <>
           <ButtonNavbar type="button" onClick={handleOpenModalLogin}>
