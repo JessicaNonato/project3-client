@@ -14,25 +14,25 @@ import SearchBarPage from "./pages/SearchBarPage";
 import api from "./utils/api.utils";
 
 function App() {
-  const token = localStorage.getItem("token");
-  const [cart, setCart] = useState([]);
+  
+  const [userCart, setUserCart] = useState([]);
 
   const getCart = async () => {
     try {
       const cartApi = await api.getCart();
-      setCart(cartApi.cart.products);
+      setUserCart(cartApi.cart.products);
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
+    const token = localStorage.getItem("token");
     if (token) {
       getCart();
-    }
-    
-  }, [token]);
+    }  
+  }, []);
   
-   
+   console.log(userCart)
 
   return (
     <div className="App">
@@ -43,7 +43,7 @@ function App() {
         <Route path ="/category/citrico" element={<CitricoPage/>}/>
         <Route path ="/category/oriental" element={<OrientalPage/>}/>
         <Route path ="/category/aromatico" element={<AromaticoPage/>}/>
-        <Route path="/product/:id" element={<ProductPage getCart={getCart} cart={cart}/>}/>
+        <Route path="/product/:id" element={<ProductPage getCart={getCart} userCart={userCart}/>}/>
         <Route path='/myfavorites' element={<MyFavorites/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/search/:qry" element={<SearchBarPage/>}/>

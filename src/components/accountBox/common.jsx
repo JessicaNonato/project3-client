@@ -10,6 +10,9 @@ export const BoxContainer = styled.div`
     position: relative;
     justify-content: center;
     overflow: hidden;
+    @media screen and (max-width: 666px) {
+        width: 300px;
+    }
 `
 
 export const FormContainer = styled.form`

@@ -96,7 +96,7 @@ const Reviews = () => {
                 <>
                   <form className="form" onSubmit={handleReviewPost}>
                     <RiCloseFill
-                      style={{ margin: "2% 92%" }}
+                      style={{ margin: "2% 75%" }}
                       onClick={toggle}
                     />
                     <div className="rev">

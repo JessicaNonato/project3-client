@@ -6,7 +6,7 @@ import { useNavigate} from 'react-router-dom';
 
 const SearchIcon = styled.div`
   display: flex;
-  padding-right: 10px;
+  padding-right: 2px;
   align-items: center;
   margin: 5px;
   size: 23px;
