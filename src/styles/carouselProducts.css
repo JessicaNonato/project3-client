@@ -85,7 +85,7 @@
   }
   @media screen and (max-width: 667px) {
     .carouselProd{
-        max-width: 300px;
+        max-width: 200px;
         }
         .item {
             background-color: white;

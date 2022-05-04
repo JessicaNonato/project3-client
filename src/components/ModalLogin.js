@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { useNavigate } from 'react-router-dom';
 import api from '../utils/api.utils';
+import styled from "styled-components";
+
+
+
 import { 
     BoxContainer,
     HeaderContainer,
@@ -15,12 +19,18 @@ import {
     
 const CustomStyles = {
     content: {
-      top: '100px',
-      left: '35%',
-      right: 'auto',
-      height: '475px'
+      top: '50%',
+      left: '50%',
+      transform:'translate(-50%, -50%)',
+      maxWidth: '442px', 
+      minWidth: '375px',
+      width: '100%',
+      height: '475px',
+      display:'flex'
     }
+    
   }
+
 
 Modal.setAppElement('#root');
 

@@ -6,29 +6,33 @@ import { TiHeartOutline } from "react-icons/ti";
 import "../styles/ProductCard.css";
 
 
-const ProductCard = () => {
+const ProductCard = ({userCart, getCart}) => {
   const { id } = useParams();
   const [perfume, setPerfume] = useState([]);
   const [toggleImg, setToggleImg] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const [inCart, setInCart] = useState(false);
   const token = localStorage.getItem("token");
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
 
-  const getCart = async () => {
-    try {
-      const cartApi = await api.getCart();
-      setCart(cartApi);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    if (token) {
-      getCart();
-    }
+  // const getCart = async () => {
+  //   try {
+  //     const cartApi = await api.getCart();
+  //     setCart(cartApi);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (token) {
+  //     // getCart();
+  //     console.log(userCart);
+  //   }
     
-  }, [token]);
+  // }, []);
+  // console.log(userCart);
+  
+ 
 
   const getPerfume = async () => {
     try {
@@ -43,7 +47,7 @@ const ProductCard = () => {
   }, [id, getPerfume]);
 
   const checkCart = () => {
-    const cartFilter = cart.cart.products.filter(
+    const cartFilter = userCart.filter(
       (item) => item.productId._id === perfume._id
     );
 

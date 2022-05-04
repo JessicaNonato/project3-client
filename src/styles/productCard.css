@@ -119,7 +119,7 @@
     flex-direction: column;
     font-family: 'Akshar', sans-serif; 
     padding: 0;
-    margin: 0px 60px 60px 60px;
+    margin: 12px 89px 33px 281px;
 }
 .review li{
     display: flex;
@@ -164,30 +164,30 @@
     .card{
     display: flex;
     flex-direction: column;
+    align-items: center;
     }
     
   }
-  @media screen and (max-width: 1250px) {
-    .carouselProd{
-    max-width: 900px;
-    }
-  }
-  @media screen and (max-width: 966px) {
-    .carouselProd{
-    max-width: 600px;
-    }
-  }
+ 
   @media screen and (max-width: 666px) {
-      .images{
-          margin-bottom: 30px;
-      }
-    .img-size {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        margin-left: 10px;
+    .img-size{
+        width: 180px;
+        height: 180px;
+    }
+    .card-page{
+        margin: 43px 12vw;
     }
     .description{
-        margin-left: 0px;
+        margin-top: 40px;
+        margin-left: 21px;
+        width: 66vw;
     }
-  }
+    .publicar{
+        width: 40%;
+    }
+    .review{
+        margin: 12px 89px 33px 30px;
+    }
+    }
+
+

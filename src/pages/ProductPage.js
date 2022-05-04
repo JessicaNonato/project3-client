@@ -8,14 +8,14 @@ import TheCoeur from "../components/TheCoeur";
 import Reviews from "../components/Reviews";
 import ProductCard from "../components/ProductCard";
 
-const ProductPage = (getCart, cart) => {
-
+const ProductPage = ({getCart, userCart}) => {
+console.log(userCart);
 
   return (
     <div>
-      <Header cart={cart} />
+      <Header userCart={userCart} />
       <TheCoeur />
-      <ProductCard getCart={getCart}/>
+      <ProductCard getCart={getCart} userCart={userCart} />
       <Reviews/>
       <CarouselProducts />
       <div className="space"></div>

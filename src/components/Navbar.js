@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Modal from "react-modal";
 import ModalLogin from "./ModalLogin";
 import ModalSignup from "./ModalSignup";
@@ -6,7 +6,7 @@ import { FaUserCircle } from "react-icons/fa";
 import styled from "styled-components";
 import { useNavigate, Link } from "react-router-dom";
 import { BsHandbag } from  'react-icons/bs';
-import api from '../utils/api.utils';
+// import api from '../utils/api.utils';
 
 
 
@@ -28,8 +28,8 @@ const BadgeSpan = styled.span`
   color: white;
   padding: 1px 5px;
   position: relative;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 13px;
+  margin-right: 10px;
 
 `
 const Auth = styled.div`
@@ -43,11 +43,25 @@ const Navbar = (cart) => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
   const [products, setProducts] = useState([]);
+  const [userName, setUserName] = useState()
   
 
   const user = localStorage.getItem("user");
-  const name = JSON.parse(user).name;
- 
+  
+  const getUserName = () => {
+    const name = JSON.parse(user).name;
+    setUserName(name)
+  }
+  
+      
+    
+  useEffect(() => {
+    if (user) {
+      getUserName()
+    }
+    
+  }, [user]);
+  
 
   const navigate = useNavigate();
 
@@ -83,7 +97,7 @@ const Navbar = (cart) => {
     console.log("feito o logout");
   };
 
-
+ 
   
 //   const getCartUser = async () => {
 //     try {
@@ -101,7 +115,7 @@ const Navbar = (cart) => {
 //     getCartUser();
 //   }  
 // }, [user]);
-console.log(cart)
+// console.log(cart)
 
 // const somarNoBadge = useMemo(()=> cart.map(item => item.productId.price * item.quantity).reduce((acc, curr) => acc + curr, 0), [products]);
     
@@ -110,7 +124,7 @@ console.log(cart)
   return (
     <>
       {user ? (<Auth>
-        <p style={{margin:0, paddingRight: 15}}>Olá, {name}</p>
+        <p style={{margin:0}}>Olá, {userName}</p>
         <ButtonNavbar type="button" onClick={handleLogout}>
           Logout
         </ButtonNavbar>
@@ -121,15 +135,18 @@ console.log(cart)
         </Auth>
         ) : (
         <>
-          <ButtonNavbar type="button" onClick={handleOpenModalLogin}>
+        <div style={{display:'flex', alignContent:'center', alignItems:'center'}}>
+        <FaUserCircle size={20} />
+        <ButtonNavbar type="button" onClick={handleOpenModalLogin}>
             {" "}
             Login
           </ButtonNavbar>
-          <ButtonNavbar type="button" onClick={handleOpenModalSignup}>
+        </div>
+          {/* <ButtonNavbar type="button" onClick={handleOpenModalSignup}>
             {" "}
-            <FaUserCircle size={20} />
+            
             Signup
-          </ButtonNavbar>
+          </ButtonNavbar> */}
         </>
       )}
 
