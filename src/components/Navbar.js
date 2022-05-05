@@ -39,7 +39,7 @@ const Auth = styled.div`
 
 `
 
-const Navbar = (cart) => {
+const Navbar = ({getCart, userCart}) => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
   const [products, setProducts] = useState([]);
@@ -98,29 +98,10 @@ const Navbar = (cart) => {
   };
 
  
+
+  // const somarNoBadge = useMemo(()=> userCart.map(item => item.quantity).reduce((acc, curr) => acc + curr, 0), [userCart]);
+
   
-//   const getCartUser = async () => {
-//     try {
-//         const cartData = await api.getCart();
-//         setProducts(cartData.cart.products);
-//         console.log(cartData.cart.products)
-
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-// useEffect(() => {
-//   if (user) {
-//     getCartUser();
-//   }  
-// }, [user]);
-// console.log(cart)
-
-// const somarNoBadge = useMemo(()=> cart.map(item => item.productId.price * item.quantity).reduce((acc, curr) => acc + curr, 0), [products]);
-    
-
-
   return (
     <>
       {user ? (<Auth>
@@ -130,7 +111,7 @@ const Navbar = (cart) => {
         </ButtonNavbar>
          <Link to={'/cart'}>
          <BsHandbag style={{color:'white', marginLeft:'0px', cursor:'pointer', position:'absolute', marginTop: '0px'}} size={23}/>
-         <BadgeSpan>{products.length}</BadgeSpan>
+         {/* <BadgeSpan>{somarNoBadge}</BadgeSpan> */}
         </Link>
         </Auth>
         ) : (

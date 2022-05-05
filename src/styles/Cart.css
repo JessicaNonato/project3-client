@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
 li {
     list-style: none;
 }
@@ -11,6 +13,7 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: center;
+   
         
 }
 
@@ -21,10 +24,13 @@ li {
     justify-content:flex-start;
     margin-left: 50px;
     margin-bottom: 0.1rem;
+    font-family: 'Akshar', sans-serif; 
+    
 }
 
 .cart-page li{
     margin-top: 0.8rem;
+    font-family: 'Akshar', sans-serif; 
 }
 
 
@@ -33,3 +39,64 @@ li {
     flex-direction: column;
     margin-top: 80px;
 }
+.finalizar{
+    width: 15%;
+    padding: 11px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 100px 100px 100px 100px;
+    transition: all, 240ms ease-in-out;
+    background: black;
+    margin-bottom: 15px; 
+    font-family: 'Akshar', sans-serif; 
+    cursor: pointer;
+}
+.delete{
+    color: white;
+    font-size: 9px;
+    border: none;
+    border-radius: 60%;
+    transition: all, 240ms ease-in-out;
+    background: black;
+    font-family: 'Akshar', sans-serif; 
+    cursor: pointer; 
+    height: 18px; 
+    width: 18px;
+   
+}
+
+.sub-cart{
+    font-family: 'Akshar', sans-serif; 
+    display: flex;
+    align-items: center;
+    
+}
+.subtotal{
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+    justify-content: space-between;
+}
+.sub{
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+    justify-content: space-between;
+}
+.quantity input{
+    border: solid 1px lightgray;
+    width: 40px;
+}
+.perfume-div{
+    display: flex;
+    justify-content: center
+}
+.name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+

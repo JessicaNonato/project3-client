@@ -20,11 +20,13 @@
 .categories-section h2{
     font-family: 'Akshar', sans-serif; 
     color: #504e4e;
+    background-color: #f1f1f2;
 }
 .categories-section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #f1f1f2;
 }
 .categories-section a{
     color: #e8b7c8;
