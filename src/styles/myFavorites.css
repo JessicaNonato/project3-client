@@ -67,6 +67,13 @@
     color: #504e4e;
   }
 
+  .image-banner {
+    object-fit: cover;
+    width: 1600px;
+    height: 450px;
+    margin-top: 20px;
+  }
+
   @media screen and (max-width: 1470px) {
       .image-banner {
           width: 1300px;

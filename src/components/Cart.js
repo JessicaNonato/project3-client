@@ -65,17 +65,26 @@ const Cart = ()=> {
                    <h1>Cart</h1>
                   <div className='cart'>
                   <ul className='cart-page'>
-                {products.map(item => <div key={item._id}>
-                    <hr style={{width: '50vw', marginLeft: '0.6rem'}}/>
+                {products.map(item => <div className="perfume-div" key={item._id}>
+                    
+                    
                     <li>
+                    <div className="cart-img">
                     <img src={item.productId.img1} alt='' className="photo-cart"/>
-                    <p>{item.productId.name}  </p>
+                    <div className="name">
+                    <p>{item.productId.name}  </p> 
+                    <button className="delete" onClick={() => deleteProductUser(item.productId._id)}>x</button>
+                    </div>
+                    
                      <p style={{fontWeight: 'bold'}}>R${item.productId.price}</p>
-                     <div>
+                     <div className="quantity">
                         <input type='number' value={item.quantity} onChange={(e)=> handleQuantity(item.productId._id, e)}/>
                      </div>
                      <p>Quantity: {item.quantity}</p>
-                     <button onClick={() => deleteProductUser(item.productId._id)}>< IoIosClose style={{color:'black', marginLeft:'7px', cursor:'pointer'}} size={19}/></button>
+                     <hr style={{width: '50vw', marginLeft: '0.6rem'}}/>
+                     </div>
+                     
+                     
                      
                     </li> 
                     
@@ -89,7 +98,7 @@ const Cart = ()=> {
                     <p>Subtotal:</p>
                     <span>R${somarPrice}.00</span>
                     </div>
-                    <button>Finalizar Compra</button>
+                    <button className="finalizar">Finalizar Compra</button>
                     </div>
                     
                     </ul>

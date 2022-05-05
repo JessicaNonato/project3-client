@@ -7,6 +7,7 @@ import TheCoeur from './TheCoeur';
 import Categories from  '../components/Categories';
 import Subscribe from './Subscribe';
 import '../styles/MyFavorites.css'
+import banner from '../midia/Favorites1.png'
 
 
 const MyFavorites = () => {
@@ -39,7 +40,7 @@ const MyFavorites = () => {
       
       <div className='page-fav'>
 
-      <h1 >My Favorites Here</h1>
+      <img className='image-banner' src={banner} alt=''/>
       <div className="products-row-fav">
         {favorites.length ? favorites.map((favorite) => 
         <div key={favorite._id}>

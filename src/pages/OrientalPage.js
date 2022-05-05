@@ -7,6 +7,7 @@ import '../styles/CategoriesPages.css';
 import Subscribe from '../components/Subscribe';
 import Categories from  '../components/Categories';
 import TheCoeur from "../components/TheCoeur";
+import banner from '../midia/Oriental.png'
 
 
 
@@ -37,7 +38,7 @@ const OrientalPage = () => {
               <Header />
               <TheCoeur/>
               <div className="page">
-              <img className="image-banner" src="https://images.pexels.com/photos/7291997/pexels-photo-7291997.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt=""/>
+              <img className="image-banner" src={banner} alt=""/>
               <div className="products-row">
                   {perfumesFiltrados ? perfumesFiltrados.map ((item) => { const {_id, name, img1, price} = item; return(
                  <Link key={_id} className="perfume-link" to={`/product/${_id}`}>

@@ -6,10 +6,10 @@ import { Carousel } from 'react-carousel-minimal';
 const CarouselBrands = () => {
     const data = [
     {
-      image: "https://content.syndigo.com/asset/1ed76417-a5a2-4f1d-9fd1-5c1e5df00e1b/1920.jpeg"
+      image: "https://i.postimg.cc/PxmK018m/banner01.jpg"
     },
     {
-      image: "https://kassioperfumaria.vteximg.com.br/arquivos/ids/206840/banner-lancome.png?v=637847685327030000"
+      image: "https://i.postimg.cc/QChSDVpv/banner02.jpg"
      
     },
     {
@@ -21,23 +21,23 @@ const CarouselBrands = () => {
       
     },
     {
-      image: "http://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/banner/2021_06_17_15_47_07_9/1fa62cda-d7a7-4793-b717-e5752dcff4f4-62022768-marc-jacobs-newco-2440x1280.jpg"
+      image: "https://i.postimg.cc/yxjj8Bjx/banner03.jpg"
       
     },
     {
-      image: "https://content.syndigo.com/asset/142fba6d-84d1-4b0f-b470-aa2c82463db1/1920.jpeg"
+      image: "https://i.postimg.cc/VLs4HrsC/banner04.jpg"
       
     },
     {
-      image: "https://cdn.shopify.com/s/files/1/0378/8262/6187/files/Shopify_Banner_MD_1900x666-1_1024x1024.jpg?v=1630388291",
+      image: "https://i.postimg.cc/BZBMgc33/banner05.jpg",
     
     },
     {
-      image: "https://kassioperfumaria.vteximg.com.br/arquivos/ids/195382/Banner-bvlgari-omnia-site.png?v=637738064509000000",
+      image: "https://images.unsplash.com/photo-1599342166997-58552e91d9f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
     
     },
     {
-      image: "https://teascentedlibrary.files.wordpress.com/2020/09/chanel-madm-intense-banner.png",
+      image: "https://images.unsplash.com/photo-1514557179557-9efc4d7949cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     
     }
   ];
