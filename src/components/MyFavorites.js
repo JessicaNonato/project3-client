@@ -10,7 +10,7 @@ import '../styles/MyFavorites.css'
 import banner from '../midia/Favorites1.png'
 
 
-const MyFavorites = () => {
+const MyFavorites = ({getCart, userCart}) => {
   const [favorites, setFavorites] = useState([]);
 
   
@@ -32,7 +32,7 @@ const MyFavorites = () => {
 
   return (
     <>
-      <Header/>
+      <Header userCart={userCart} getCart={getCart}/>
 
       <TheCoeur/>
 

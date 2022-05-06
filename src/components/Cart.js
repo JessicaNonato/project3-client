@@ -7,7 +7,7 @@ import TheCoeur from  './TheCoeur';
 import '../styles/Cart.css'
 
 
-const Cart = ()=> {
+const Cart = ({userCart, getCart})=> {
     const [products, setProducts] = useState([]);
     const [quantity, setQuantity] = useState();
     const token = localStorage.getItem('token');
@@ -17,7 +17,7 @@ const Cart = ()=> {
         try {
             const cartData = await api.getCart();
             setProducts(cartData.cart.products);
-            console.log(cartData.cart.products)
+            console.log(cartData)
     
         } catch (error) {
             console.log(error);
@@ -59,7 +59,7 @@ const Cart = ()=> {
 
       return(
           <div>
-              <Header/> 
+              <Header userCart={userCart} getCart={getCart}/> 
               <TheCoeur/>
               <div className="cartAll">
                    <h1>Cart</h1>
@@ -81,7 +81,7 @@ const Cart = ()=> {
                         <input type='number' value={item.quantity} onChange={(e)=> handleQuantity(item.productId._id, e)}/>
                      </div>
                      <p>Quantity: {item.quantity}</p>
-                     <hr style={{width: '50vw', marginLeft: '0.6rem'}}/>
+                     <hr style={{width: '65vw'}}/>
                      </div>
                      
                      

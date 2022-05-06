@@ -11,7 +11,7 @@ import banner from '../midia/Amadeirado.png'
 
 
 
-const AmadeiradoPage = () => {
+const AmadeiradoPage = ({getCart, userCart}) => {
     const categoryParams = useParams();
     const [perfumes, setPerfumes] = useState([]);
     
@@ -36,7 +36,7 @@ const AmadeiradoPage = () => {
 
       return(
           <div>
-              <Header />
+              <Header userCart={userCart} getCart={getCart} />
               <TheCoeur/>
               <div className="page">
               <img className="image-banner" src={banner} alt=""/>

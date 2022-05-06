@@ -13,7 +13,7 @@ console.log(userCart);
 
   return (
     <div>
-      <Header getCart={getCart}  userCart={userCart} />
+      <Header userCart={userCart} getCart={getCart}/>
       <TheCoeur />
       <ProductCard getCart={getCart} userCart={userCart} />
       <Reviews/>

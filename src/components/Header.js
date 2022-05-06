@@ -6,7 +6,7 @@ import SearchBar from './SearchBar';
 import {React} from "react";
 
 
-const Header = ({getCart, userCart}) => {
+const Header = ({userCart, getCart}) => {
  
 
     return (
@@ -19,7 +19,7 @@ const Header = ({getCart, userCart}) => {
             </Link>
           </div>
           <div>
-            <Navbar getCart={getCart}  userCart={userCart} />
+            <Navbar userCart={userCart} getCart={getCart} />
            
           </div>
           
