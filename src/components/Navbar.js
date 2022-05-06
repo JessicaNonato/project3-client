@@ -109,7 +109,7 @@ const Navbar = ({userCart, getCart}) => {
   
 // }, [somarBadge, user]);
 console.log(userCart)
-  const somarNoBadge = useMemo(()=> userCart.map(item => item.quantity).reduce((acc, curr) => acc + curr, 0), [getCart]);
+  let somarNoBadge = useMemo(()=> userCart.map(item => item.quantity).reduce((acc, curr) => acc + curr, 0), [userCart]);
 //  console.log( somarNoBadge)
   
   return (
