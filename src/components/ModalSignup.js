@@ -18,8 +18,8 @@ const CustomStyles = {
     top: '50%',
       left: '50%',
       transform:'translate(-50%, -50%)',
-      maxWidth: '442px', 
-      minWidth: '375px',
+      maxWidth: '337px',  
+      minWidth: '340px',
       width: '100%',
       height: '475px',
       display:'flex'

@@ -6,7 +6,7 @@ import api from "../utils/api.utils";
 import Categories from  '../components/Categories';
 import { Link, useParams } from 'react-router-dom';
 
-const SearchPage = () => {
+const SearchPage = ({getCart, userCart}) => {
     const [products, setProducts] = useState([])
     const [filteredList, setFilteredList] = useState([])
     const [inputValue, setInputValue] = useState('');
@@ -50,7 +50,7 @@ const SearchPage = () => {
 
     return(
         <>
-        <Header/>
+        <Header userCart={userCart} getCart={getCart}/>
         <TheCoeur/>
         <div>
            {filteredList ? filteredList.map (product => 

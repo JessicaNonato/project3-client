@@ -11,7 +11,7 @@ import banner from '../midia/Citrico.png'
 
 
 
-const CitricoPage = () => {
+const CitricoPage = ({getCart, userCart}) => {
     const categoryParams = useParams();
     const [perfumes, setPerfumes] = useState([]);
     
@@ -36,7 +36,7 @@ const CitricoPage = () => {
 
       return(
         <div>
-              <Header />
+              <Header userCart={userCart} getCart={getCart} />
               <TheCoeur/>
               <div className="page">
               <img className="image-banner" src={banner} alt=""/>

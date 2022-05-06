@@ -8,10 +8,10 @@ import Categories from '../components/Categories';
 import CarouselProducts from '../components/CarouselProducts';
 import TheCoeur from '../components/TheCoeur';
 
-const HomePage = () => {
+const HomePage = ({getCart, userCart}) => {
     return(
         <div className='home-page'>
-        <Header/>
+        <Header userCart={userCart} getCart={getCart}/>
         <TheCoeur/>
         <CarouselBrands />
         <div className='perfect'>

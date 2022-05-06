@@ -5,7 +5,8 @@ li {
 }
 
 .photo-cart{
-    width: 10vw;
+    width: 130px;
+    height: auto;
     float: left;
 }
 
@@ -40,7 +41,7 @@ li {
     margin-top: 80px;
 }
 .finalizar{
-    width: 15%;
+    width: 150px;
     padding: 11px;
     color: white;
     font-size: 15px;
@@ -98,5 +99,21 @@ li {
     flex-direction: row;
     justify-content: space-between
 }
+
+@media screen and (max-width: 670px) {
+ .perfume-div{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+ }
+ .cart-page{
+     padding: 0;
+ }
+ .name p{
+     max-width: 220px;
+ }
+
+}
+
 
 

@@ -93,13 +93,28 @@
     }
     @media screen and (max-width: 666px) {
       .image-banner{
-          width: 600px;
+          width: 500px;
           height: 180px;
         }
     }
     @media screen and (max-width: 400px) {
       .image-banner {
-          width: 380px;
-          height: 180px;
+        width: 361px;
+        height: 157px;
         }
+        .item-fav {
+          background-color: white;
+          margin: 20px;
+          width: 10px;
+          padding: 10px;
+          width: 208px;
+          height: 301px;
+          border-radius: 16px;
+          flex: none;
+      }
+      .image-fav img {
+        width: 189px;
+        height: 200px;
+        object-fit: cover;
+    }
     }

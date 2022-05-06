@@ -37,16 +37,16 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<HomePage/>}/>      
-        <Route path ="/category/floral" element= {<FloralPage/>}/>
-        <Route path ="/category/amadeirado" element= {<AmadeiradoPage/>}/>
-        <Route path ="/category/citrico" element={<CitricoPage/>}/>
-        <Route path ="/category/oriental" element={<OrientalPage/>}/>
-        <Route path ="/category/aromatico" element={<AromaticoPage/>}/>
+        <Route path="/" element={<HomePage getCart={getCart} userCart={userCart}/>}/>      
+        <Route path ="/category/floral" element= {<FloralPage getCart={getCart} userCart={userCart}/>}/>
+        <Route path ="/category/amadeirado" element= {<AmadeiradoPage getCart={getCart} userCart={userCart}/>}/>
+        <Route path ="/category/citrico" element={<CitricoPage getCart={getCart} userCart={userCart}/>}/>
+        <Route path ="/category/oriental" element={<OrientalPage getCart={getCart} userCart={userCart}/>}/>
+        <Route path ="/category/aromatico" element={<AromaticoPage getCart={getCart} userCart={userCart}/>}/>
         <Route path="/product/:id" element={<ProductPage getCart={getCart} userCart={userCart}/>}/>
-        <Route path='/myfavorites' element={<MyFavorites/>}/>
-        <Route path="/cart" element={<Cart/>}/>
-        <Route path="/search/:qry" element={<SearchBarPage/>}/>
+        <Route path='/myfavorites' element={<MyFavorites getCart={getCart} userCart={userCart}/>}/>
+        <Route path="/cart" element={<Cart getCart={getCart} userCart={userCart}/>}/>
+        <Route path="/search/:qry" element={<SearchBarPage getCart={getCart} userCart={userCart}/>}/>
       </Routes>  
     </div>
   );

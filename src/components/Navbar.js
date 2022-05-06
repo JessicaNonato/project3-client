@@ -39,7 +39,7 @@ const Auth = styled.div`
 
 `
 
-const Navbar = ({getCart, userCart}) => {
+const Navbar = ({userCart, getCart}) => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenSignup, setModalIsOpenSignup] = useState(false);
   const [products, setProducts] = useState([]);
@@ -56,11 +56,11 @@ const Navbar = ({getCart, userCart}) => {
       
     
   useEffect(() => {
-    if (user) {
+    if(user){
       getUserName()
     }
-    
-  }, [user]);
+      
+  }, []);
   
 
   const navigate = useNavigate();
@@ -97,10 +97,20 @@ const Navbar = ({getCart, userCart}) => {
     console.log("feito o logout");
   };
 
- 
+//  const somarBadge = () => {
+//   const somar = userCart.map(item => item.quantity).reduce((acc, curr) => acc + curr, 0)
+//   setProducts(somar)
+//  }
 
-  // const somarNoBadge = useMemo(()=> userCart.map(item => item.quantity).reduce((acc, curr) => acc + curr, 0), [userCart]);
-
+//  useEffect(() => {
+//   if (user) {
+//     somarBadge()
+//   }
+  
+// }, [somarBadge, user]);
+console.log(userCart)
+  const somarNoBadge = useMemo(()=> userCart.map(item => item.quantity).reduce((acc, curr) => acc + curr, 0), [getCart]);
+//  console.log( somarNoBadge)
   
   return (
     <>
@@ -111,7 +121,7 @@ const Navbar = ({getCart, userCart}) => {
         </ButtonNavbar>
          <Link to={'/cart'}>
          <BsHandbag style={{color:'white', marginLeft:'0px', cursor:'pointer', position:'absolute', marginTop: '0px'}} size={23}/>
-         {/* <BadgeSpan>{somarNoBadge}</BadgeSpan> */}
+         <BadgeSpan>{somarNoBadge}</BadgeSpan>
         </Link>
         </Auth>
         ) : (
