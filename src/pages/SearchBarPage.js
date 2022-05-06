@@ -5,6 +5,7 @@ import TheCoeur from "../components/TheCoeur";
 import api from "../utils/api.utils";
 import Categories from  '../components/Categories';
 import { Link, useParams } from 'react-router-dom';
+import '../styles/SearchBar.css'
 
 const SearchPage = ({getCart, userCart}) => {
     const [products, setProducts] = useState([])
@@ -52,12 +53,22 @@ const SearchPage = ({getCart, userCart}) => {
         <>
         <Header userCart={userCart} getCart={getCart}/>
         <TheCoeur/>
-        <div>
+        <div className="products-row-search">
            {filteredList ? filteredList.map (product => 
                 <div key={product._id}>
-                <Link to={`/products/${product._id}`}>
-                <img src={product.img1} alt ='product-pic'/>
-                <h3>{product.name}</h3>
+                <Link className="perfume-link" to={`/products/${product._id}`}>
+                <div className="item-search">
+            <figure  className="image-search">
+              <img
+                src={product.img1}
+                alt=""
+              />
+            </figure>
+            <div className="info-search">
+              <h3 className="name-search">{product.name}</h3>
+              <p className="price-search">R${product.price}</p>
+            </div> 
+          </div>
                 </Link>
                 </div>                
              ) 

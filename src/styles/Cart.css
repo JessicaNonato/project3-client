@@ -9,6 +9,10 @@ li {
     height: auto;
     float: left;
 }
+.photo-cart:hover {
+    opacity: 0.3;
+    transition: 0.3s;
+  }
 
 .cart-page{
     display: flex;
@@ -28,7 +32,12 @@ li {
     font-family: 'Akshar', sans-serif; 
     
 }
-
+.cartAll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
 .cart-page li{
     margin-top: 0.8rem;
     font-family: 'Akshar', sans-serif; 

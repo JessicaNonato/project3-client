@@ -26,6 +26,10 @@
   height: 240px;
   object-fit: cover;
 }
+.image-page:hover img{
+  opacity: 0.3;
+  transition: 0.3s;
+}
 .info-page {
   height: 100px;
   display: flex;
@@ -36,7 +40,7 @@
 .info-page span {
   display: block;
   text-align: center;
-  color: lightgray;
+  color: #504e4e;
   padding: 5px;
   border-radius: 10px;
   background-color: white;

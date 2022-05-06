@@ -1,10 +1,10 @@
-import React from "react";
+import { React, useState } from "react";
 import styled from 'styled-components';
 import api from "../utils/api.utils";
 
 const SubsDiv = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
-    background-color: #F9DCDF;
+    background-color: #e8b7c8;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -67,7 +67,7 @@ const ButtonForm = styled.button`
     padding: 0px 20px;
 
     &:hover{
-        background-color: #F9DCDF;
+        background-color: #e8b7c8;
         color: white;
         }; 
 
@@ -89,11 +89,12 @@ const ButtonForm = styled.button`
 
 
 const Subscribe = () => {
+    const [subscribed, setSubscribed] = useState(false)
 
     const sub = async (email) => {
         try {
           const subEmail = await api.subscribeEmail(email);
-          
+        
         } catch (error) {
           console.log(error);
         }
@@ -107,7 +108,8 @@ const Subscribe = () => {
             <SubsDivForm>
                 <SubsForm>
                 <InputForm type="text" placeholder="your e-mail here"></InputForm>
-                <ButtonForm onClick={(e) => sub(e)}>Send</ButtonForm>
+                <ButtonForm onClick={(e) => {sub(e); setSubscribed(true)} }>Send</ButtonForm>
+                {subscribed? <p>E-mail cadastrado com sucesso!</p> : ''}
                 </SubsForm>
             </SubsDivForm>
 

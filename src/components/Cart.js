@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import TheCoeur from  './TheCoeur';
 import '../styles/Cart.css'
+import { Link } from 'react-router-dom';
 
 
 const Cart = ({userCart, getCart})=> {
@@ -70,7 +71,9 @@ const Cart = ({userCart, getCart})=> {
                     
                     <li>
                     <div className="cart-img">
-                    <img src={item.productId.img1} alt='' className="photo-cart"/>
+                    <Link key={item.productId._id} className="perfume-link" to={`/product/${item.productId._id}`}>
+                         <img src={item.productId.img1} alt='' className="photo-cart"/>
+                    </Link>
                     <div className="name">
                     <p>{item.productId.name}  </p> 
                     <button className="delete" onClick={() => deleteProductUser(item.productId._id)}>x</button>

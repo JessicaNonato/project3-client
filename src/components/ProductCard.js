@@ -162,8 +162,9 @@ const ProductCard = ({userCart, getCart}) => {
               {isFavorite ? (
                 <TiHeartFullOutline
                   size={30}
-                  style={{ color: "lightgrey" }}
+                  style={{ color: "lightgrey"}}
                   onClick={() => deleteOneFavorite(perfume._id)}
+                  
                 />
               ) : (
                 <TiHeartOutline

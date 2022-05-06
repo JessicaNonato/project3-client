@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
 .link-categories{
     border: 1px solid #e8b7c8;
     border-radius: 90px;
@@ -7,8 +9,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .categories-div{
+    
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -17,6 +21,35 @@
     margin: 30px 20px;
     max-width: 1020px;
 }
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 90px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #e8b7c8;
+  }
+  .link-categories:hover .overlay {
+    opacity: 1;
+  }
+  .text {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Ms Madi';
+  }
+
 .categories-section h2{
     font-family: 'Akshar', sans-serif; 
     color: #504e4e;
@@ -30,9 +63,6 @@
 }
 .categories-section a{
     color: #e8b7c8;
-}
-.categories-section a:hover{
-    color: #504e4e;
 }
 
 
