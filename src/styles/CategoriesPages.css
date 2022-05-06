@@ -86,11 +86,19 @@
         width: 900px;
         height: 280px;
       }
+      .image-page:hover img{
+        opacity: 0.3;
+        transition: 0.3s;
+      }
   }
   @media screen and (max-width: 666px) {
     .image-banner{
         width: 500px;
         height: 180px;
+      }
+      .image-page:hover img{
+        opacity: 0.3;
+        transition: 0.3s;
       }
   }
   @media screen and (max-width: 400px) {
@@ -115,5 +123,9 @@
   }
   .price-page{
     padding: 0;
+  }
+  .image-page:hover img{
+    opacity: 0.3;
+    transition: 0.3s;
   }
   }

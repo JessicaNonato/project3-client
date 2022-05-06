@@ -56,7 +56,7 @@ const SearchPage = ({getCart, userCart}) => {
         <div className="products-row-search">
            {filteredList ? filteredList.map (product => 
                 <div key={product._id}>
-                <Link className="perfume-link" to={`/products/${product._id}`}>
+                <Link className="perfume-link" to={`/product/${product._id}`}>
                 <div className="item-search">
             <figure  className="image-search">
               <img
