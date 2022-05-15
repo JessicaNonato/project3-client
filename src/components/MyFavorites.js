@@ -7,11 +7,14 @@ import TheCoeur from './TheCoeur';
 import Categories from  '../components/Categories';
 import Subscribe from './Subscribe';
 import '../styles/MyFavorites.css'
-import banner from '../midia/Favorites1.png'
+import banner from '../midia/Favorites1.png';
+import { Ripple } from 'react-spinners-css';
 
 
 const MyFavorites = ({getCart, userCart}) => {
   const [favorites, setFavorites] = useState([]);
+  const [inCart, setInCart] = useState(false);
+  const [cart, setCart] = useState(false);
 
   
   const getFavorites = async () => {
@@ -23,7 +26,16 @@ const MyFavorites = ({getCart, userCart}) => {
         console.log(error);
     }}
 
- 
+    const addToCart = async (id) => {
+      try {
+        const creatCartOnApi = await api.createCart(id);
+        setInCart(true);
+        getCart();
+        setCart(true);
+      } catch (error) {
+        console.log(error);
+      }
+    };
   
    useEffect(() => {
      getFavorites();
@@ -40,26 +52,35 @@ const MyFavorites = ({getCart, userCart}) => {
       
       <div className='page-fav'>
 
-      <img className='image-banner' src={banner} alt=''/>
+      <img className='img-banner' src={banner} alt=''/>
       <div className="products-row-fav">
-        {favorites.length ? favorites.map((favorite) => 
-        <div key={favorite._id}>
-          <Link className="perfume-link"to={`/product/${favorite._id}`}>
-          <div className="item-fav">
-            <figure  className="image-fav">
-              <img
-                src={favorite.img1}
-                alt=""
-              />
-            </figure>
-            <div className="info-fav">
-              <h3 className="name-fav">{favorite.name}</h3>
-            </div> 
-          </div>
-          </Link>
-          {/* <button id={favorites._id}></button> */}
-        </div>
-        ) : ""}
+        {favorites.length ? favorites.map((item) => { const {_id, name, img1, price} = item; return(
+                <div className="item-page">
+                <Link key={_id} className="perfume-link" to={`/product/${_id}`}>
+                 <div  >
+                 <div className="image-page">
+                     <img src={img1} alt={name} />
+                 </div>
+                 
+                 <div className="info-page">
+                 <span className="name-page">{name}</span>
+                 <span className="price-page">R${price}</span>
+                 </div>
+                 </div>
+                 
+                 </Link>
+                 <button
+                  className="adicionar"
+                  onClick={() =>
+                    addToCart(_id)
+                  }
+                >
+                  ADICIONAR AO CARRINHO
+                 </button>
+                 
+                 </div>
+    
+            )}): <Ripple color="#e8b7c8"/>}
       </div>
       </div>
       <Categories/>

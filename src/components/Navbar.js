@@ -30,6 +30,10 @@ const BadgeSpan = styled.span`
   position: relative;
   margin-left: 13px;
   margin-right: 10px;
+  @media screen and (max-width: 670px) {
+    margin-left: 6px;
+  }
+
 
 `
 const Auth = styled.div`

@@ -12,6 +12,7 @@ import ProductPage from './pages/ProductPage';
 import 'antd/dist/antd.min.css';
 import SearchBarPage from "./pages/SearchBarPage";
 import api from "./utils/api.utils";
+import FinalizarCompra from "./pages/FinalizarCompra";
 
 function App() {
   
@@ -47,6 +48,7 @@ function App() {
         <Route path='/myfavorites' element={<MyFavorites getCart={getCart} userCart={userCart}/>}/>
         <Route path="/cart" element={<Cart getCart={getCart} userCart={userCart}/>}/>
         <Route path="/search/:qry" element={<SearchBarPage getCart={getCart} userCart={userCart}/>}/>
+        <Route path="/finalizar" element={<FinalizarCompra getCart={getCart} userCart={userCart}/>}/>
       </Routes>  
     </div>
   );

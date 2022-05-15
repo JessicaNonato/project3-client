@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from 'react-carousel-minimal';
-
+//image: "https://i.postimg.cc/PxmK018m/banner01.jpg"
 
 
 const CarouselBrands = () => {
@@ -32,20 +32,16 @@ const CarouselBrands = () => {
       image: "https://i.postimg.cc/BZBMgc33/banner05.jpg",
     
     },
-    {
-      image: "https://images.unsplash.com/photo-1599342166997-58552e91d9f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
+    // {
+    //   image: "https://images.unsplash.com/photo-1599342166997-58552e91d9f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
     
-    },
-    {
-      image: "https://images.unsplash.com/photo-1514557179557-9efc4d7949cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    // },
+    // {
+    //   image: "https://images.unsplash.com/photo-1514557179557-9efc4d7949cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     
-    }
+    // }
   ];
 
-  const captionStyle = {
-    fontSize: '2em',
-    fontWeight: 'bold',
-  }
 
   return (
     <div className="App">
@@ -57,8 +53,8 @@ const CarouselBrands = () => {
           <Carousel
             data={data}
             time={1800}
-            width="1800px"
-            height="450px"
+            width="1600px"
+            height="400px"
             radius="5px"
             slideNumber={false}
             captionPosition="bottom"
@@ -71,10 +67,11 @@ const CarouselBrands = () => {
             thumbnails={false}
             thumbnailWidth="100px"
             style={{
-              textAlign: "center",
-              maxWidth: "1800px",
-              maxHeight: "500px",
+              textAlign: "contain",
+              maxWidth: "1600px",
+              maxHeight: "400px",
               margin: "40px auto",
+              
             }}
           />
         </div>

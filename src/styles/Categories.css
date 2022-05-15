@@ -11,6 +11,7 @@
     justify-content: center;
     position: relative;
 }
+
 .categories-div{
     
     display: flex;
@@ -62,6 +63,9 @@
     background-color: #f1f1f2;
 }
 .categories-section a{
+    color: #e8b7c8;
+}
+.categories-section a:hover{
     color: #e8b7c8;
 }
 

@@ -1,11 +1,11 @@
 import {React, useEffect, useState, useMemo} from "react";
-import {IoIosClose} from 'react-icons/io';
 import api from '../utils/api.utils';
 import Footer from "./Footer";
 import Header from "./Header";
 import TheCoeur from  './TheCoeur';
 import '../styles/Cart.css'
 import { Link } from 'react-router-dom';
+import { Ripple } from 'react-spinners-css';
 
 
 const Cart = ({userCart, getCart})=> {
@@ -35,7 +35,8 @@ const Cart = ({userCart, getCart})=> {
     
         try {
             const updateQuant = await api.updateQuantity(id, quantity);
-            getCartUser()
+            getCartUser();
+            getCart();
     
         } catch (error) {
             console.log(error);
@@ -45,7 +46,8 @@ const Cart = ({userCart, getCart})=> {
     const deleteProductUser = async(id) => {
         try {
             const deleteCartData = await api.deleteProductInTheCart(id);
-            getCartUser()
+            getCartUser();
+            getCart();
     
         } catch (error) {
             console.log(error);
@@ -60,13 +62,13 @@ const Cart = ({userCart, getCart})=> {
 
       return(
           <div>
-              <Header userCart={userCart} getCart={getCart}/> 
+              <Header getCart={getCart} userCart={userCart}/> 
               <TheCoeur/>
               <div className="cartAll">
                    <h1>Cart</h1>
                   <div className='cart'>
                   <ul className='cart-page'>
-                {products.map(item => <div className="perfume-div" key={item._id}>
+                {products.length ? products.map(item => <div className="perfume-div" key={item._id}>
                     
                     
                     <li>
@@ -91,7 +93,7 @@ const Cart = ({userCart, getCart})=> {
                      
                     </li> 
                     
-                    </div>)}
+                    </div>): <Ripple color="#e8b7c8"/>}
                     <div className="sub-cart"> 
                     <div className='sub'>
                     <p>Total Products:</p>
@@ -101,7 +103,7 @@ const Cart = ({userCart, getCart})=> {
                     <p>Subtotal:</p>
                     <span>R${somarPrice}.00</span>
                     </div>
-                    <button className="finalizar">Finalizar Compra</button>
+                    <Link to={'/finalizar'}><button className="finalizar">Finalizar Compra</button></Link>
                     </div>
                     
                     </ul>

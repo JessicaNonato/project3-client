@@ -42,7 +42,7 @@ const Categories = () => {
             </div>
 
             <div className='link-categories'>
-            <Link to={'/category/aromatico'}> 
+            <Link className='link' to={'/category/aromatico'}> 
             <GiHerbsBundle size={50}/> 
             <div class="overlay">
             <div class="text">Aromático</div>

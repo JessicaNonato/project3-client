@@ -94,7 +94,7 @@ const Subscribe = () => {
     const sub = async (email) => {
         try {
           const subEmail = await api.subscribeEmail(email);
-        
+          setSubscribed(false)
         } catch (error) {
           console.log(error);
         }
@@ -107,9 +107,14 @@ const Subscribe = () => {
             </SubsDivText>
             <SubsDivForm>
                 <SubsForm>
-                <InputForm type="text" placeholder="your e-mail here"></InputForm>
-                <ButtonForm onClick={(e) => {sub(e); setSubscribed(true)} }>Send</ButtonForm>
-                {subscribed? <p>E-mail cadastrado com sucesso!</p> : ''}
+                
+                 <>
+                    <InputForm type="text" placeholder="your e-mail here"></InputForm>
+                    <ButtonForm onClick={(e) => {sub(e); setSubscribed(false)} }>Send</ButtonForm>
+                </>
+                {subscribed ? <p>E-mail cadastrado com sucesso!</p>: ''}
+                
+                
                 </SubsForm>
             </SubsDivForm>
 

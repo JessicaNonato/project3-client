@@ -4,6 +4,7 @@ import '../styles/CarouselProducts.css'
 import {IoIosArrowForward} from 'react-icons/io';
 import {IoIosArrowBack} from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import { Ripple } from 'react-spinners-css';
 
 
 const CarouselProducts = () => {
@@ -43,7 +44,7 @@ const CarouselProducts = () => {
             </div>
         <div className="carouselProd" ref={carousel}>
            
-            {perfumes.map ((item) => { const {_id, name, img1, price} = item; 
+            {perfumes.length ? perfumes.map ((item) => { const {_id, name, img1, price} = item; 
             return(
                 <Link key={_id} className="perfume-link" to={`/product/${_id}`}>
                  <div className="item">
@@ -56,7 +57,7 @@ const CarouselProducts = () => {
                  </div>
                  </div>
                  </Link>
-            )})}
+            )}) : <Ripple color="#e8b7c8"/>}
         </div>
         <div className="buttons">
                 <button onClick={handleRightClick}><IoIosArrowForward size={30} style={{color:"504e4e"}}/> </button>

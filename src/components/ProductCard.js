@@ -13,7 +13,7 @@ const ProductCard = ({userCart, getCart}) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [inCart, setInCart] = useState(false);
   const token = localStorage.getItem("token");
-  // const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(false);
 
   // const getCart = async () => {
   //   try {
@@ -60,7 +60,8 @@ const ProductCard = ({userCart, getCart}) => {
     try {
       const creatCartOnApi = await api.createCart(id);
       setInCart(true);
-      getCart()
+      getCart();
+      setCart(true);
     } catch (error) {
       console.log(error);
     }
@@ -70,7 +71,8 @@ const ProductCard = ({userCart, getCart}) => {
     try {
       const update = await api.addProductsInTheCart(id);
       setInCart(true);
-      getCart()
+      getCart();
+      setCart(true);
     } catch (error) {
       console.log(error);
     }
@@ -196,8 +198,9 @@ const ProductCard = ({userCart, getCart}) => {
                     : updateQuantityInTheCart(perfume._id)
                 }
               >
-                COMPRAR
+                ADICIONAR AO CARRINHO
               </button>
+              {cart ? 'Produto adicionado com sucesso!' : ""}
             </div>
           </div>
         ) : (

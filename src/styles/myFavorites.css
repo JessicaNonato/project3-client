@@ -71,7 +71,7 @@
     color: #504e4e;
   }
 
-  .image-banner {
+  .img-banner {
     object-fit: cover;
     width: 1600px;
     height: 450px;
@@ -79,31 +79,31 @@
   }
 
   @media screen and (max-width: 1470px) {
-      .image-banner {
+      .img-banner {
           width: 1300px;
         }
     }
     @media screen and (max-width: 1250px) {
-      .image-banner {
+      .img-banner {
           width: 1000px;
           height: 280;
         }
     }
     @media screen and (max-width: 966px) {
-      .image-banner {
+      .img-banner {
           width: 900px;
           height: 280px;
         }
     }
     @media screen and (max-width: 666px) {
-      .image-banner{
+      .img-banner{
           width: 500px;
           height: 180px;
         }
     }
     @media screen and (max-width: 400px) {
-      .image-banner {
-        width: 361px;
+      .img-banner {
+        width: 360px;
         height: 157px;
         }
         .item-fav {
@@ -116,7 +116,7 @@
           border-radius: 16px;
           flex: none;
       }
-      .image-fav img {
+      .img-fav img {
         width: 189px;
         height: 200px;
         object-fit: cover;

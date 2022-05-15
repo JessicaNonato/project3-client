@@ -7,13 +7,16 @@ import '../styles/CategoriesPages.css';
 import Subscribe from '../components/Subscribe';
 import Categories from  '../components/Categories';
 import TheCoeur from "../components/TheCoeur";
-import banner from '../midia/Aromatico.png'
+import banner from '../midia/Aromatico.png';
+import { Ripple } from 'react-spinners-css';
 
 
 
 const AromaticoPage = ({getCart, userCart}) => {
     const categoryParams = useParams();
     const [perfumes, setPerfumes] = useState([]);
+    const [inCart, setInCart] = useState(false);
+    const [cart, setCart] = useState(false);
     
     const getPerfumes = async () => {
         try {
@@ -27,8 +30,19 @@ const AromaticoPage = ({getCart, userCart}) => {
     }
     
   
-    const perfumesFiltrados = perfumes.filter(item => item.category === "aromático")
-     
+    const perfumesFiltrados = perfumes.filter(item => item.category === "aromático");
+
+    const addToCart = async (id) => {
+        try {
+          const creatCartOnApi = await api.createCart(id);
+          setInCart(true);
+          getCart();
+          setCart(true);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
    
     useEffect(() => {
         getPerfumes();
@@ -39,21 +53,36 @@ const AromaticoPage = ({getCart, userCart}) => {
         <Header userCart={userCart} getCart={getCart} />
         <TheCoeur/>
         <div className="page">
-        <img className="image-banner" src={banner} alt=""/>
+        <div className="category"><p>Aromático</p></div>
+        {/* <img className="image-banner" src={banner} alt=""/> */}
         <div className="products-row">
-            {perfumesFiltrados ? perfumesFiltrados.map ((item) => { const {_id, name, img1, price} = item; return(
-          <Link key={_id} className="perfume-link" to={`/product/${_id}`}>
-          <div className="item-page">
+            {perfumesFiltrados.length ? perfumesFiltrados.map ((item) => { const {_id, name, img1, price} = item; return(
+         <div className="item-page">
+         <Link key={_id} className="perfume-link" to={`/product/${_id}`}>
+          <div  >
           <div className="image-page">
               <img src={img1} alt={name} />
           </div>
+          
           <div className="info-page">
           <span className="name-page">{name}</span>
           <span className="price-page">R${price}</span>
           </div>
           </div>
+          
           </Link>
-      )}): "No Results."}
+          <button
+           className="adicionar"
+           onClick={() =>
+             addToCart(_id)
+           }
+         >
+           ADICIONAR AO CARRINHO
+          </button>
+          
+          </div>
+
+     )}): <Ripple color="#e8b7c8"/>}
         </div>
         </div>
         <Categories/>
