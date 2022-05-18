@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useCallback, useState } from "react";
 import { useParams} from "react-router-dom";
 import api from "../utils/api.utils";
 import { TiHeartFullOutline } from "react-icons/ti";
@@ -8,7 +8,7 @@ import "../styles/ProductCard.css";
 
 const ProductCard = ({userCart, getCart}) => {
   const { id } = useParams();
-  const [perfume, setPerfume] = useState([]);
+  const [perfume, setPerfume] = useState(null);
   const [toggleImg, setToggleImg] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const [inCart, setInCart] = useState(false);
@@ -34,17 +34,22 @@ const ProductCard = ({userCart, getCart}) => {
   
  
 
-  const getPerfume = async () => {
-    try {
-      const perfumesApi = await api.getOneProduct(id);
-      setPerfume(perfumesApi);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const getPerfume = useCallback(
+    async () => {
+  
+      try {
+        const perfumesApi = await api.getOneProduct(id);
+        setPerfume(perfumesApi);
+      } catch (error) {
+        console.log(error);
+      }
+    }, [setPerfume, id]
+  )
+
   useEffect(() => {
+    // setPerfume(null)
     getPerfume();
-  }, [id, getPerfume]);
+  }, [getPerfume]);
 
   const checkCart = () => {
     const cartFilter = userCart.filter(
