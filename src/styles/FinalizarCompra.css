@@ -19,6 +19,7 @@
     color: black !important;
     text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
   }
+
   
   .input-field.cvv,
   .input-field.number,
@@ -209,14 +210,14 @@ textarea.materialize-textarea,
         width: 50%;
       }
       .address-payment{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          max-width: 1700px;
-          justify-content: center;
-          background: #f1f1f2;
-          margin-top: 20px;
-          height: 700px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* max-width: 1700px; */
+        background: #f1f1f2;
+        margin-top: 20px;
+        height: 700px;
+        justify-content: center;
       }
       .but{
           display: flex;
@@ -234,13 +235,13 @@ textarea.materialize-textarea,
             height: 700px;
         }
         .form-group {
-            width: 350px;
+            width: 340px;
         }
         .payment {
             margin: 0;
         }
         
 .credit-card-box {
-    width: 370px;
+    width: 360px;
     height: 272px;}
        }
