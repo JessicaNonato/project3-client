@@ -6,32 +6,32 @@ import { Carousel } from 'react-carousel-minimal';
 const CarouselBrands = () => {
     const data = [
     {
-      image: "https://i.postimg.cc/PxmK018m/banner01.jpg"
+      image: "https://i.postimg.cc/vm9Rd8Z2/01-BANNER-NOMADE.jpg"
     },
     {
-      image: "https://i.postimg.cc/QChSDVpv/banner02.jpg"
+      image: "https://i.postimg.cc/HxCqWGJY/02-BANNER-MISSDIOR.jpg"
      
     },
     {
-      image: "https://cdn.notinoimg.com/c=85/images/gallery/ba/15/N_TopBanner_Chanel_1D.jpg"
+      image: "https://i.postimg.cc/gkkP6Pgr/03-BANNER-CARTIER-CARAT.jpg"
      
     },
     {
-      image: "https://content.syndigo.com/asset/581fd3a2-7b57-4013-b5bd-39a49e8f879e/1464.webp"
+      image: "https://i.postimg.cc/VkJQDWQ8/04-BANNER-C-CO-CHANNEL.jpg"
       
     },
     {
-      image: "https://i.postimg.cc/yxjj8Bjx/banner03.jpg"
+      image: "https://i.postimg.cc/mgKxq1BF/05-BANNER-IRRESISTIBLE.jpg"
       
     },
     {
-      image: "https://i.postimg.cc/VLs4HrsC/banner04.jpg"
+      image: "https://i.postimg.cc/5N7WBkrg/06-BANNER-CHLOE-NATURALLE.jpg"
       
     },
-    {
-      image: "https://i.postimg.cc/BZBMgc33/banner05.jpg",
+    // {
+    //   image: "https://i.postimg.cc/BZBMgc33/banner05.jpg",
     
-    },
+    // },
     // {
     //   image: "https://images.unsplash.com/photo-1599342166997-58552e91d9f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
     

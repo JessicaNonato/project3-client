@@ -93,7 +93,7 @@ const Cart = ({userCart, getCart})=> {
                      
                     </li> 
                     
-                    </div>): <Ripple color="#e8b7c8"/>}
+                    </div>): <div className="loading"> <Ripple color="#e8b7c8"/> </div>}
                     <div className="sub-cart"> 
                     <div className='sub'>
                     <p>Total Products:</p>
